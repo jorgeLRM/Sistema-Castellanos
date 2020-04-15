@@ -1,1 +1,106 @@
-<h1>REPORTS</h1>
+<style>
+   .table-fixed tbody {
+    height: 180px;
+    overflow-y: auto;
+    width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+    display: block;
+}
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+    float: left;
+    position: relative;
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+</style>
+
+<div class="container py-4">
+   <div class="row justify-content-start">
+      <div class="col-3">
+         <input type="date" id="picker" class="form-control">
+      </div>
+      <div class="col-3">
+         <input type="date" id="picker" class="form-control">
+      </div>
+         <button type="button" class="btn btn-primary">Primary</button>
+   </div>
+</div>
+
+<div class="container py-1">
+   <div class="row">
+      <caption><h5>Ingresos</h5></caption>
+       <div class="col-12 bg-white rounded shadow">
+           <!-- Fixed header table-->
+           <div class="table-responsive">
+               <table class="table table-fixed">
+                   <thead>
+                       <tr>
+                           <th scope="col" class="col-3">#</th>
+                           <th scope="col" class="col-3">First</th>
+                           <th scope="col" class="col-3">Last</th>
+                           <th scope="col" class="col-3">Handle</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <th scope="row" class="col-3">1</th>
+                           <td class="col-3">Mark</td>
+                           <td class="col-3">Otto</td>
+                           <td class="col-3">@mdo</td>
+                       </tr>
+
+                   </tbody>
+               </table>
+           </div><!-- End -->
+
+       </div>
+   </div>
+</div>
+
+<div class="container py-3">
+<div class="row">
+   <caption><h5>Egresos</h5></caption>
+    <div class="col-12 bg-white rounded shadow">
+        <!-- Fixed header table-->
+        <div class="table-responsive">
+            <table class="table table-fixed">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-3">#</th>
+                        <th scope="col" class="col-3">First</th>
+                        <th scope="col" class="col-3">Last</th>
+                        <th scope="col" class="col-3">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="col-3">1</th>
+                        <td class="col-3">Mark</td>
+                        <td class="col-3">Otto</td>
+                        <td class="col-3">@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!-- End -->
+
+    </div>
+</div>
+</div>
+
+<div class="container" style="padding-bottom: 20px;">
+   <div class="row">
+      <div class="col-2 ml-auto">
+         <button type="button" class="btn btn-primary">Ver pdf</button>
+      </div>
+   </div>
+</div>
