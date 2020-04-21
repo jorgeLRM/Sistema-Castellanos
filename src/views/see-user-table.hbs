@@ -1,1 +1,279 @@
-<h1>SEE USER TABLE</h1>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="public/css/estilosRaul.css">
+<br>
+<!-- contenido central -->
+<section>
+  <!-- bara de busqueda -->
+  <div class="container">
+    <div class="row justify-content-start px-2 py-3">
+        <div class="col-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        </div>
+        <div class="col-3">
+            <select id="inputState" class="form-control mr-sm-2">
+                <option selected>Opcion 1</option>
+                <option>Opcion 2</option>
+                <option>Opcion 3</option>
+                <option>Opcion 4</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-secondary " type="submit">Buscar</button>
+        </div>
+  </div>
+</div>
+<!-- Tabla 1 -->
+<div class="row py-5 px-4">
+  <div class="col-2">
+
+  </div>
+<div class="col-sm-7">
+    <div class="scrollable-mini">
+      <!---->  <div class="table-responsiv">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>algo</td>
+                    <td>algo</td>
+                    <td>algo</td>
+                    <td>algo</td>
+                    <td>
+                      <button type="button" class="btn btn-secondary">Modificar</button>
+                      <hr>
+                      <button type="button" class="btn btn-secondary">Eliminar</button>
+                    </tr>
+                    <tr>
+                      <td>algo</td>
+                      <td>algo</td>
+                      <td>algo</td>
+                      <td>algo</td>
+                      <td>
+                        <button type="button" class="btn btn-secondary">Modificar</button>
+                        <hr>
+                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                      </tr>
+                      <tr>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary">Modificar</button>
+                          <hr>
+                          <button type="button" class="btn btn-secondary">Eliminar</button>
+                        </tr>
+                        <tr>
+                          <td>algo</td>
+                          <td>algo</td>
+                          <td>algo</td>
+                          <td>algo</td>
+                          <td>
+                            <button type="button" class="btn btn-secondary">Modificar</button>
+                            <hr>
+                            <button type="button" class="btn btn-secondary">Eliminar</button>
+                          </tr>
+                          <tr>
+                            <td>algo</td>
+                            <td>algo</td>
+                            <td>algo</td>
+                            <td>algo</td>
+                            <td>
+                              <button type="button" class="btn btn-secondary">Modificar</button>
+                              <hr>
+                              <button type="button" class="btn btn-secondary">Eliminar</button>
+                            </tr>
+                            <tr>
+                              <td>algo</td>
+                              <td>algo</td>
+                              <td>algo</td>
+                              <td>algo</td>
+                              <td>
+                                <button type="button" class="btn btn-secondary">Modificar</button>
+                                <hr>
+                                <button type="button" class="btn btn-secondary">Eliminar</button>
+                              </tr>
+                              <tr>
+                                <td>algo</td>
+                                <td>algo</td>
+                                <td>algo</td>
+                                <td>algo</td>
+                                <td>
+                                  <button type="button" class="btn btn-secondary">Modificar</button>
+                                  <hr>
+                                  <button type="button" class="btn btn-secondary">Eliminar</button>
+                                </tr>
+                                <tr>
+                                  <td>algo</td>
+                                  <td>algo</td>
+                                  <td>algo</td>
+                                  <td>algo</td>
+                                  <td>
+                                    <button type="button" class="btn btn-secondary">Modificar</button>
+                                    <hr>
+                                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                                  </tr>
+                                  <tr>
+                                    <td>algo</td>
+                                    <td>algo</td>
+                                    <td>algo</td>
+                                    <td>algo</td>
+                                    <td>
+                                      <button type="button" class="btn btn-secondary">Modificar</button>
+                                      <hr>
+                                      <button type="button" class="btn btn-secondary">Eliminar</button>
+                                    </tr>
+                                    <tr>
+                                      <td>algo</td>
+                                      <td>algo</td>
+                                      <td>algo</td>
+                                      <td>algo</td>
+                                      <td>
+                                        <button type="button" class="btn btn-secondary">Modificar</button>
+                                        <hr>
+                                        <button type="button" class="btn btn-secondary">Eliminar</button>
+                                      </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#">Eliminar</button>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="<col-1">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modificarusuario">Modificar</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ventana emergene para el boton servicio confirmar -->
+<form>
+<div class="modal fade" id="modificarusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-lg modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-secondary">
+                <h5 class="modal-title text-light" id="confirmarservicioCenterTitle">Actualizar Usuario</h5>
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Etiqueta para los campos de opciones -->
+            <div class="modal-body">
+              <div class="container-fluid cuarto pt-4">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                    <input type="number" class="form-control" id="foliousuario" placeholder="folio">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid quinto pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required required autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid sexto pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" id="apellm" placeholder="Apellido Materno" required required autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid septimo pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                      <input type="text" class="form-control" id="appellp" placeholder="Apellido Paterno" required required autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid octavo pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                        <input type="text" class="form-control" id="Username" placeholder="Username" required required autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid noveno pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                        <input type="text" class="form-control" id="password" placeholder="Password" required required autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid decimo pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                    <select id="inputState" class="form-control mr-sm-2">
+                        <option selected>Tipo de usuario</option>
+                        <option>Opcion 2</option>
+                        <option>Opcion 3</option>
+                        <option>Opcion 4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid decimo pt-2">
+                <div class="row">
+                  <div class="col-2">
+                  </div>
+                  <div class="col-8">
+                    <select id="inputState" class="form-control mr-sm-2">
+                        <option selected>Estado</option>
+                        <option>Opcion 2</option>
+                        <option>Opcion 3</option>
+                        <option>Opcion 4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-auto ">Cancelar</button>
+                    <button type="submit" class="btn btn-primary mx-auto" data-toggle="modal"> <!--data-target="#avisousuario"-->Ok</button>
+                    <br>
+            </div>
+        </div>
+    </div>
+  </form>
+<br>
