@@ -1,1 +1,285 @@
-<h1>ADD SALE</h1>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style-venta.css" th:href="/css/style-venta.css">
+</head>
+<script>
+     $(function() {
+        $('#txtbuscar').on('keypress', function(e) {
+          if (e.which == 32)
+               return false;
+             });
+        });
+</script>
+<body>
+    <div class="container ">
+            <form>
+            
+              <div class="form-row cuadros"  >
+                <div class="col ">
+                  <div class="form-group" id="buscar-group">
+                    <input type="text" class="form-control" id="txtbuscar"  placeholder="palabra clave" style="padding-left: 54px" onchange="validar(txtbuscar)"   required >
+                  </div>
+                  <div class="invalid-feedback">Example invalid feedback text</div>
+                  </div>
+                <div class="col" >
+                    <select class="custom-select" id="validationCustom04" required >
+                        <option selected disabled value="">Opciones de busqueda</option>
+                        <option>REFACCIONES</option>
+                        <option>ADITAMENTOS</option>
+                        <option>ID</option>
+                        <option>Num. Parte</option>
+                        <option>Clasificación</option>
+                      </select>
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary boton" >Buscar</button>   
+                </div>
+              </div>
+          
+        </form>
+        <div class="row tablas" style="text-align: center;margin-top: 20px;">
+          <div class=" col-sm-6">
+              <div class="scrollable-mini">
+                  <div class="table-responsive">
+                      <table class="table table-hover table-bordered" id="tabla1">
+                        <thead class="thead-dark">
+                          <tr>
+                              <th>ID</th>
+                              <th>Imagen</th>
+                              <th>Núm. Parte</th>
+                              <th>Descripción</th>
+                              <th>Clasificación</th>
+                              <th>Precio Venta</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                          </tr>
+                      </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="col-auto">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" id="agre">Agregar</button>
+   
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Ingrese la cantidad</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                      <div class="col-auto">
+                      <label>Cantidad del producto: </label>
+                    </div>
+                    <div class="col-auto">
+                      <div class="input-group number-spinner" id="spin">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" data-dir="dwn"><span class="fas fa-minus"></span></button>
+                        </span>
+                        <input disabled type="text" class="form-control text-center" value="1">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" data-dir="up"><span class="fas fa-plus"></span></button>
+                        </span>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-4">
+              <div class="scrollable-mini"> 
+              <div class="table-responsive">
+                  <table class="table table-hover table-bordered" id="tabla2">
+                    <thead class="table-dark">
+                      <tr>
+                          <th>Folio Venta </th>
+                          <th>Núm. Parte</th>
+                          <th>Cantidad</th>
+                          <th>Acción</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          
+                          <td >algo</td>
+                          <td>algo</td>
+                          <td>algo</td>
+                          <td>
+                            <div class="text-center">
+                              <div class="btn-group">
+                                <button class="btn btn-primary btnEditar">Editar</button>
+                                <button class="btn btn-danger btnBorrar">Borrar</button>
+                              </div>
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td >algo</td>
+                        <td>algo</td>
+                        <td>algo</td>
+                        <td>
+                          <div class="text-center">
+                            <div class="btn-group">
+                              <button class="btn btn-primary btnEditar">Editar</button>
+                              <button class="btn btn-danger btnBorrar">Borrar</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                  </table>
+              </div>
+              </div>
+          </div>
+</div>
+      
+      <div class="row botones">
+        <div class="col-auto">
+          <button type="button" class="btn btn-secondary" id="btnl" onclick="limpiar()">Limpiar</button>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-secondary" id="btnc">Cobrar</button>
+        </div>
+          <div class="col-auto">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Total $</span>
+                  </div>
+                  <input disabled type="text" class="form-control " id="btnin" aria-label="Amount (to the nearest dollar)">
+                </div>
+          </div>
+      </div>
+      </div>
+      <script>
+                $(document).on('click', '.number-spinner button', function () {    
+                    var btn = $(this),
+                      oldValue = btn.closest('.number-spinner').find('input').val().trim(),
+                      newVal = 0;
+                    
+                    if (btn.attr('data-dir') == 'up') {
+                      newVal = parseInt(oldValue) + 1;
+                    } else {
+                      if (oldValue > 1) {
+                        newVal = parseInt(oldValue) - 1;
+                      } else {
+                        newVal = 1;
+                      }
+                    }
+                    btn.closest('.number-spinner').find('input').val(newVal);
+                  });
+              </script>
+              <script>
+                  function validar(id) {
+                    var nombre = $("#txtbuscar").val();
+                    if ($.trim(nombre) == "")
+                     alert("debe ingresar un valor en el campo");
+                    else
+                     alert("ingreso "+$.trim(nombre)+", es correcto!");
+                   }
+              </script>
+              
+              <script>
+                function limpiar(){
+                  $("#tabla1 tbody tr").remove(); 
+                  $("#tabla2 tbody tr").remove(); 
+                }
+              </script>
+</body>

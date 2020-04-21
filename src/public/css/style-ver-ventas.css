@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+header{
+    width:100%;
+    overflow: hidden;
+    background-color: orange
+
+}
+header .logo{
+    color: white;
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 45px;
+    float: left;
+}
+header .rol{
+    
+    margin-right: 22px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+    
+
+}
+header .usuario{
+    margin-right: 12px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+}
+.guia{
+    height: 40px;
+    margin-top: 0px;
+     top: 20px;
+    line-height: 10px;
+    float: right;
+    text-align: right;
+}
+.cuadros{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.scrollable-mini {
+    max-height: 60vh;
+    overflow: auto;
+}
+.btnElim{
+    margin-top: 60px;
+    float: right;
+    margin-right: 27%;
+}
+.tab{
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30%;
+    max-width: 500px;
+}
+.boton{
+    margin-top: 30px;
+}
+
+.menu{
+    background-color: rgb(12, 60, 107);
+}

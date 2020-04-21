@@ -1,0 +1,99 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+header{
+    width:100%;
+    overflow: hidden;
+    background-color: orange
+
+}
+header .logo{
+    color: white;
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 45px;
+    float: left;
+}
+header .rol{
+    
+    margin-right: 22px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+    
+
+}
+header .usuario{
+    margin-right: 12px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+}
+.guia{
+    height: 40px;
+    margin-top: 0px;
+     top: 20px;
+    line-height: 10px;
+    float: right;
+    text-align: right;
+}
+.boton{
+    margin-top: 30px;
+}
+
+.menu{
+    background-color: rgb(12, 60, 107);
+}
+.cuadros{
+    margin-top: 30px;
+    margin-left:5%;
+}
+.boton{
+    margin-top: 0px;
+}
+.botn{
+    margin-top: 20px;
+    margin-left:5%;
+}
+.crs {
+    max-height: 40vh;
+    overflow: auto;
+}
+.scrollable-mini {
+    max-height: 50vh;
+    overflow: auto;
+}
+.btn-secondary#bo{
+    margin-block-start: 100px;
+    margin-left: -70px;
+}
+.btn-secondary#agre{
+    margin-left: 5px;
+}
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 24px;
+}
+.form-group#buscar-group::before{
+    content: "\f002";
+}
+.botones{
+    margin-top: 30px;
+    margin-right: 60px;
+    float: right;
+}
+.lim{
+    margin-top: 70px;
+    padding: 0 300px;
+    float: center;
+}
+.form-control#btnin{
+    max-width: 15vh;
+}
+.input-group#spin{
+    max-width: 160px;
+}

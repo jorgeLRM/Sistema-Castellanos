@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(248, 249, 250);
+}
+body#bodyE{
+    background: linear-gradient(to bottom, rgb(12, 60, 107), rgb(71, 167, 231));
+}
+header{
+    width:100%;
+    overflow: hidden;
+    background-color: orange;
+
+}
+header .logo{
+    color: white;
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 45px;
+    float: left;
+}
+header .rol{
+    
+    margin-right: 22px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+    
+
+
+}
+header .usuario{
+    margin-right: 12px;
+    margin-top: 10px;
+    line-height: 15px;
+    float: right;
+    text-align: right;
+}
+.guia{
+    height: 40px;
+    margin-top: 0px;
+     top: 20px;
+    line-height: 10px;
+    float: right;
+    text-align: right;
+}
+.menu{
+    background-color: rgb(12, 60, 107);
+}
