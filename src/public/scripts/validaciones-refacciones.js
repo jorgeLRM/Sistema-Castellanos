@@ -101,7 +101,7 @@ form.addEventListener('submit', (e) => {
     clasificacion.classList.add("is-valid");
   }
 
-  if (window.location.pathname.split("/").pop() === "refacciones-agregar.html") {
+  if (window.location.pathname.split("/").pop() === "add-repair") {
     if (existencias.value === '' || existencias.value == null) {
       existenciasText.innerHTML = "<small>Llena el campo por favor</small>";
       existenciasText.classList.remove("text_error");

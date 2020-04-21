@@ -1,1 +1,622 @@
-<h1>SEE REPAIR TABLE</h1>
+<head>
+    <link rel="stylesheet" href="/css/style-repair-table.css">
+    <script defer src="/scripts/validaciones-refacciones.js"></script>
+</head>
+
+<body class="b-light">
+
+    <div class="container-fluid">
+
+        <!-- Filtros y botón buscar -->
+        <div class="row mt-3 ml-1">
+
+            <!-- Filtro: Palabra clave -->
+            <div class="col-md-3 pl-2">
+                <input type="text" class="form-control fas" id="existencias"
+                    placeholder="&#xF002; Palabra clave">
+            </div>
+
+            <!-- Filtro: Filtro -->
+            <div class="col-md-3">
+                <select class="form-control" id="filtro">
+                    <option disabled selected hidden>Filtro</option>
+                    <option class="optionHidden">2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <!-- Botón Buscar-->
+            <div class="col-md-2">
+                <button type="button" class="btn btn-outline-dark">Buscar</button>
+            </div>
+
+        </div>
+
+        <!-- Tabla -->
+        <div class="mx-2 my-4">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Parte</th>
+                            <th>Descripción</th>
+                            <th>Unidad</th>
+                            <th>Precio venta</th>
+                            <th>Precio compra</th>
+                            <th>Existencias</th>
+                            <th>Clasificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                        <tr>
+                            <td><div contenteditable>Editable 1</div></td>
+                            <td><div contenteditable>Editable 2</div></td>
+                            <td><div contenteditable>Editable 3</div></td>
+                            <td><div contenteditable>Editable 4</div></td>
+                            <td><div contenteditable>Editable 5</div></td>
+                            <td><div contenteditable>Editable 6</div></td>
+                            <td><div contenteditable>Editable 7</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Botones bottom -->
+        <div class="mt-4">
+            <div class="btn-toolbar justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-danger mr-2" data-toggle="modal"
+                        data-target="#eliminarClasfRefaccionModal">Eliminar clasificación</button>
+
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#eliminarUniRefaccionModal">Eliminar unidad</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success mr-2">Nuevo</button>
+
+                    <button type="button" class="btn btn-danger mr-2" data-toggle="modal"
+                        data-target="#eliminarRefaccionModal">Eliminar</button>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#modificarRefaccionModal">Modificar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modales -->
+
+        <!-- Elimnar -->
+        <div class="modal fade" id="eliminarRefaccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-light" id="eliminarRefaccionModalCenterTitle">¡Precaución!</h5>
+                        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Eliminar un registro implica realizar cambios que pueden afectar la base de datos</p>
+                        <p class="seguro"><strong>¿Desea continuar?</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger mx-auto">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eliminar unidad -->
+        <div class="modal fade" id="eliminarUniRefaccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h5 class="modal-title" id="eliminarUniRefaccionModalCenterTitle">Eliminar unidad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="scrollable-mini">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Unidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="table-primary">algo</td>
+                                            <td class="table-primary">algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning mx-auto" data-toggle="modal"
+                        data-target="#eliminarUniRefaccionModal2">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Submodal Eliminar Unidad -->
+            <div class="modal fade" id="eliminarUniRefaccionModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-sm modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                            <h5 class="modal-title text-light" id="eliminarUniRefaccionModal2CenterTitle">¡Precaución!</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Eliminar un registro implica realizar cambios que pueden afectar la base de datos</p>
+                            <p class="seguro"><strong>¿Desea continuar?</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger mx-auto">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Eliminar clasificación -->
+        <div class="modal fade" id="eliminarClasfRefaccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h5 class="modal-title" id="eliminarClasfRefaccionModalCenterTitle">Eliminar clasificación</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="scrollable-mini">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>algo</td>
+                                            <td>algo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning mx-auto" data-toggle="modal"
+                        data-target="#eliminarClasfRefaccionModal2">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Submodal Eliminar Clasificación -->
+            <div class="modal fade" id="eliminarClasfRefaccionModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-sm modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                            <h5 class="modal-title text-light" id="eliminarClasfRefaccionModal2CenterTitle">¡Precaución!</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Eliminar un registro implica realizar cambios que pueden afectar la base de datos</p>
+                            <p class="seguro"><strong>¿Desea continuar?</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger mx-auto">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Modificar -->
+        <form class="needs-validation pl-5" id="form" novalidate>
+        <div class="modal fade" id="modificarRefaccionModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-lg modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-light" id="modificarRefaccionModalCenterTitle">Modificar refacción</h5>
+                        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- <form> -->
+                                    <!-- Numero de parte -->
+                                    <div class="form-group form-init">
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="numParte" placeholder="Número de parte">
+                                        </div>
+                                        <div class="ml-4 text-danger text_error" id="numParteText">
+                                            <small>Llena el campo por favor</small>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Descripción -->
+                                    <div class="form-group">
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="descripcion" placeholder="Descripción">
+                                        </div>
+                                        <div class="ml-4 text-danger text_error" id="descripcionText">
+                                            <small>Llena el campo por favor</small>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Obervación -->
+                                    <div class="form-group">
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="observacion" placeholder="Observación">
+                                        </div>
+                                        <div class="ml-4 text-danger text_error" id="observacionText">
+                                            <small>Llena el campo por favor</small>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Precio de venta -->
+                                    <div class="form-group">
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="precioVenta"
+                                                placeholder="Precio de venta">
+                                        </div>
+                                        <div class="ml-4 text-danger text_error" id="precioVentaText">
+                                            <small>Llena el campo por favor</small>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Precio de compra -->
+                                    <div class="form-group">
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="precioCompra"
+                                                placeholder="Precio de compra">
+                                        </div>
+                                        <div class="ml-4 text-danger text_error" id="precioCompraText">
+                                            <small>Llena el campo por favor</small>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Unidad -->
+                                    <div class="row unidad-y-clasf">
+                                        <div class="form-group col-md-8">
+                                            <select class="form-control" id="unidad">
+                                                <option disabled selected hidden>Unidad</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="ml-2 text-danger text_error" id="unidadText">
+                                                <small>Elige una opción porfavor</small>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Boton Agregar -->
+                                        <div class="col-md-3 ml-2">
+                                            <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                                data-target="#unidadModalNested">Agregar</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Clasificación -->
+                                    <div class="row unidad-y-clasf">
+                                        <div class="form-group col-md-8">
+                                            <select class="form-control" id="clasificacion">
+                                                <option disabled selected hidden>Clasificación</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                            <div class="ml-2 text-danger text_error" id="clasificacionText">
+                                                <small>Elige una opción porfavor</small>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Boton Agregar -->
+                                        <div class="col-md-3 ml-2">
+                                            <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                                data-target="#clasfModalNested">Agregar</button>
+                                        </div>
+                                    </div>
+                                <!-- </form> -->
+                            </div>
+
+                            <div class="col-md-6 mt-5">
+                                <!-- Place holder -->
+                                <div class="container">
+                                    <img class="d-block mx-auto mt-3 placeHolder" src="/img/imagePlaceHolder.png" alt="mechanic-stuff">
+                                </div>
+
+                                <!-- Agregar imagen -->
+                                <div class="mt-4">
+                                    <form>
+                                        <div class="row form-group">
+                                            <div class="custom-file col-md-8 offset-md-2">
+                                                <input type="file" class="custom-file-input" id="customFile" lang="es">
+                                                <label class="custom-file-label" for="customFile">Elegir archivo...</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary mx-auto">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+
+            <!-- Submodal Unidad -->
+            <div class="modal fade" id="unidadModalNested" tabindex="-1" role="dialog" aria-labelledby="unidadModalNestedTitle"
+                aria-hidden="true">
+                <div class="modal modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="unidadModalNestedlCenterTitle">Agregar unidad</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <!-- Input ID -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="idUnidadRefaccion" placeholder="ID" disabled>
+                                </div>
+                                <!-- Nombre de unidad -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="NombreUnidadRefaccion"
+                                        placeholder="Nombre de unidad">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary mx-auto">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submodal Clasificación -->
+            <div class="modal fade" id="clasfModalNested" tabindex="-1" role="dialog" aria-labelledby="clasfModalNestedTitle"
+                aria-hidden="true">
+                <div class="modal modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="clasfModalNestedlCenterTitle">Agregar clasificación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <!-- Input ID -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="idClasificacionRefaccion" placeholder="ID" disabled>
+                                </div>
+                                <!-- Nombre de unidad -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="clasificacionRefaccion"
+                                        placeholder="Clasificación">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary mx-auto">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+    </div>
+</body>

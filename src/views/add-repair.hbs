@@ -1,1 +1,414 @@
-<h1>ADD REPAIR</h1>
+<head>
+    <link rel="stylesheet" href="/css/style-add-repair.css">
+    <script defer src="/scripts/validaciones-refacciones.js"></script>
+</head>
+
+<body class="b-light">
+
+    <!-- Refaccines -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Formulario principal -->
+            <div class="col-md-6 mt-5">
+                <form class="needs-validation pl-5" id="form" novalidate>
+
+                    <!-- Numero de parte -->
+                    <div class="form-group form-init">
+                        <div class="col">
+                            <input type="text" class="form-control" id="numParte" placeholder="Número de parte" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="numParteText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="form-group">
+                        <div class="col-md">
+                            <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="descripcionText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Obervación -->
+                    <div class="form-group">
+                        <div class="col-md">
+                            <input type="text" class="form-control" id="observacion" placeholder="Observación" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="observacionText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Precio de venta -->
+                    <div class="form-group">
+                        <div class="col-md">
+                            <input type="text" class="form-control" id="precioVenta" placeholder="Precio de venta" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="precioVentaText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Precio de compra -->
+                    <div class="form-group">
+                        <div class="col-md">
+                            <input type="text" class="form-control" id="precioCompra" placeholder="Precio de compra" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="precioCompraText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Existencia -->
+                    <div class="form-group">
+                        <div class="col-md">
+                            <input type="text" class="form-control" id="existencias" placeholder="Existencias" required>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="existenciasText">
+                            <small>Llena el campo por favor</small>
+                        </div>
+                    </div>
+
+                    <!-- Unidad -->
+                    <div class="row form-group">
+                        <div class="col-md-10">
+                            <select class="form-control" id="unidad">
+                                <option disabled selected hidden>Unidad</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                        <!-- Boton Agregar -->
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                data-target="#unidadModal">Agregar</button>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="unidadText">
+                            <small>Elige una opción porfavor</small>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="unidadModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="unidadModalCenterTitle">Agregar unidad</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <!-- Input ID -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="idUnidadRefaccion"
+                                                    placeholder="ID" disabled>
+                                            </div>
+                                            <!-- Nombre de unidad -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="NombreUnidadRefaccion"
+                                                    placeholder="Nombre de unidad">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary mx-auto">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Clasificación -->
+                    <div class="row form-group">
+                        <div class="col-md-10">
+                            <select class="form-control" id="clasificacion">
+                                <option disabled selected hidden>Clasificación</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                        <!-- Boton agregar -->
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                data-target="#clasificacionModal">Agregar</button>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="clasificacionText">
+                            <small>Elige una opción porfavor</small>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="clasificacionModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="unidadModalCenterTitle">Agregar clasificación</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <!-- Input ID -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="idClasificacionRefaccion"
+                                                    placeholder="ID" disabled>
+                                            </div>
+                                            <!-- Clasificación -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="clasificacionRefaccion"
+                                                    placeholder="Clasificación">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary mx-auto">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proveedores -->
+                    <div class="row form-group">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="proveedores" placeholder="Proveedores">
+                        </div>
+
+                        <!-- Boton agregar -->
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                data-target="#proveedoresModal">Agregar</button>
+                        </div>
+                        <div class="ml-4 text-danger text_error" id="proveedoresText">
+                            <small>Elige una opción porfavor</small>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="proveedoresModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-xl modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="unidadModalCenterTitle">Agregar proveedor</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- Buscar -->
+                                        <div class="row form-group">
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control fas" id="existencias"
+                                                    placeholder="&#xF002; Buscar">
+                                            </div>
+
+                                            <!-- Filtro -->
+                                            <div class="col-md-4">
+                                                <select class="form-control" id="filtroProveedores">
+                                                    <option disabled selected hidden>Filtro</option>
+                                                    <option class="optionHidden">2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- 1ra tabla -->
+                                        <div class="scrollable">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>RFC</th>
+                                                            <th>Razón social</th>
+                                                            <th>CP</th>
+                                                            <th>Teléfono</th>
+                                                            <th>Email</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- Botón agregar -->
+                                        <button type="button"
+                                            class="btn btn-outline-dark addProvModalBtn">Agregar</button>
+
+                                        <!-- 2da tabla -->
+                                        <div class="scrollable">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>RFC</th>
+                                                            <th>Razón social</th>
+                                                            <th>CP</th>
+                                                            <th>Teléfono</th>
+                                                            <th>Email</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                            <td>Prueba</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- Botón agregar -->
+                                        <button type="button"
+                                            class="btn btn-outline-dark addProvModalBtn">Agregar</button>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary mx-auto">Aceptar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </form>
+            </div>
+            <!-- /Formulario principal -->
+
+            <!-- Imagen -->
+            <div class="col-md-6 mt-5">
+
+                <!-- Place holder -->
+                <div class="container">
+                    <img class="d-block mx-auto mt-3 placeHolder" src="/img/imagePlaceHolder.png" alt="mechanic-stuff">
+                </div>
+
+                <!-- Agregar imagen -->
+                <div class="mt-4">
+                    <form>
+                        <div class="row form-group">
+                            <div class="custom-file col-md-8 offset-md-2">
+                                <input type="file" class="custom-file-input" id="customFile" lang="es">
+                                <label class="custom-file-label" for="customFile">Elegir archivo...</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- /Imagen -->
+        </div>
+    </div>
+</body>
