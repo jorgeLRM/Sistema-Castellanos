@@ -1,1 +1,129 @@
-<h1>ADD USER</h1>
+<head>
+    <link rel="stylesheet" href="/css/refacciones-agregar.css">
+    <script defer src="/scripts/validaciones-usuario.js"></script>
+</head>
+
+<body class="b-light">
+
+    <!-- Agregar usuario -->
+    <div class="container">
+
+        <!-- Formulario principal -->
+        <div class="mt-5">
+            <form class="needs-validation pl-5" id="form" novalidate>
+            
+                <!-- ID usuario -->
+                <div class="form-group form-init">
+                    <div class="col-md">
+                        <input type="text" class="form-control" id="idUsuario" placeholder="ID usuario">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="idUsuarioText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Nombre -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="nombreText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Apellido paterno -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <input type="text" class="form-control" id="apellidoPaterno" placeholder="Apellido paterno">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="apellidoPaternoText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Apellido materno -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <input type="text" class="form-control" id="apellidoMaterno" placeholder="Apellido materno">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="apellidoMaternoText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Nombre de usuario -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="nombreUsuarioText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="contrasenaText">
+                        <small>Llena el campo por favor</small>
+                    </div>
+                </div>
+            
+                <!-- Tipo de Usuario -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <select class="form-control" id="tipoUsuario">
+                            <option disabled selected hidden>Tipo de usuario</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="tipoUsuarioText">
+                        <small>Elige una opción porfavor</small>
+                    </div>
+                </div>
+            
+                <!-- Estado -->
+                <div class="form-group">
+                    <div class="col-md">
+                        <select class="form-control" id="estado">
+                            <option disabled selected hidden>Estado</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="ml-4 text-danger text_error" id="estadoText">
+                        <small>Elige una opción porfavor</small>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="offset-5 col-md-1">
+                        <!-- Boton Limpiar -->
+                        <div class="col-md-2 mt-5">
+                            <button type="button" class="btn btn-primary">Limpiar</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <!-- Boton Aceptar -->
+                        <div class="col-md-2 mt-5">
+                            <button type="submit" class="btn btn-success">Aceptar</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </form>
+        </div>
+        
+    </div>
+</body>
