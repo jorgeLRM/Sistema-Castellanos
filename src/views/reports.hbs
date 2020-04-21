@@ -24,77 +24,104 @@
 }
 </style>
 
+<form class="" action="/process/reports" method="post">
 <div class="container py-4">
    <div class="row justify-content-start">
-      <div class="col-3">
-         <input type="date" id="picker" class="form-control">
-      </div>
-      <div class="col-3">
-         <input type="date" id="picker" class="form-control">
-      </div>
-         <button type="button" class="btn btn-primary">Primary</button>
+        <div class="col-3">
+           <input type="date" name="date1" id="date1" required  class="form-control" value={{date1}}>
+        </div>
+        <div class="col-3">
+           <input type="date" name="date2" id="date2" required class="form-control" value={{date2}}>
+        </div>
+        <button type="submit" class="btn btn-primary">Consultar</button>
    </div>
 </div>
+</form>
 
 <div class="container py-1">
    <div class="row">
       <caption><h5>Ingresos</h5></caption>
        <div class="col-12 bg-white rounded shadow">
-           <!-- Fixed header table-->
            <div class="table-responsive">
                <table class="table table-fixed">
-                   <thead>
+                   <thead class="thead-dark">
                        <tr>
-                           <th scope="col" class="col-3">#</th>
-                           <th scope="col" class="col-3">First</th>
-                           <th scope="col" class="col-3">Last</th>
-                           <th scope="col" class="col-3">Handle</th>
+                           <th scope="col" class="col-3">FOLIO</th>
+                           <th scope="col" class="col-3">FECHA</th>
+                           <th scope="col" class="col-3">PRECIO TOTAL</th>
+                           <th scope="col" class="col-3">TIPO INGRESO</th>
                        </tr>
                    </thead>
                    <tbody>
+                     {{#each services}}
                        <tr>
-                           <th scope="row" class="col-3">1</th>
-                           <td class="col-3">Mark</td>
-                           <td class="col-3">Otto</td>
-                           <td class="col-3">@mdo</td>
+                           <td class="col-3">{{folio}}</td>
+                           <td class="col-3">{{fecha}}</td>
+                           <td class="col-3">{{precio_total}}</td>
+                           <td class="col-3">Venta</td>
                        </tr>
-
+                      {{/each}}
+                      {{#each sales}}
+                        <tr>
+                            <td class="col-3">{{folio}}</td>
+                            <td class="col-3">{{fecha}}</td>
+                            <td class="col-3">{{precio_total}}</td>
+                            <td class="col-3">Servicio</td>
+                        </tr>
+                       {{/each}}
                    </tbody>
                </table>
-           </div><!-- End -->
-
+           </div>
        </div>
    </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <div class="input-group m-auto">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">TOTAL DE INGRESOS</span>
+      </div>
+      <input type="text" disabled class="form-control" aria-describedby="basic-addon1" value={{totalRevenue}}>
+    </div>
+  </div>
 </div>
 
 <div class="container py-3">
 <div class="row">
    <caption><h5>Egresos</h5></caption>
     <div class="col-12 bg-white rounded shadow">
-        <!-- Fixed header table-->
         <div class="table-responsive">
-            <table class="table table-fixed">
-                <thead>
+            <table class="table table-fixed dark">
+                <thead class="thead-dark">
                     <tr>
-                        <th scope="col" class="col-3">#</th>
-                        <th scope="col" class="col-3">First</th>
-                        <th scope="col" class="col-3">Last</th>
-                        <th scope="col" class="col-3">Handle</th>
+                        <th scope="col" class="col-4">FOLIO</th>
+                        <th scope="col" class="col-4">FECHA</th>
+                        <th scope="col" class="col-4">PÉRDIDA</th>
                     </tr>
                 </thead>
                 <tbody>
+                  {{#each expenses}}
                     <tr>
-                        <th scope="row" class="col-3">1</th>
-                        <td class="col-3">Mark</td>
-                        <td class="col-3">Otto</td>
-                        <td class="col-3">@mdo</td>
+                        <td class="col-4">{{folio}}</td>
+                        <td class="col-4">{{fecha}}</td>
+                        <td class="col-4">{{perdida}}</td>
                     </tr>
+                   {{/each}}
                 </tbody>
             </table>
-        </div><!-- End -->
-
+        </div>
     </div>
 </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <div class="input-group m-auto">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">TOTAL DE EGRESOS</span>
+      </div>
+      <input type="text" class="form-control" disabled aria-describedby="basic-addon1" value='{{totalExpenses}}'>
+    </div>
+  </div>
 </div>
 
 <div class="container" style="padding-bottom: 20px;">

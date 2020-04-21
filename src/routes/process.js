@@ -13,7 +13,7 @@ router.get('/home', (req, res) => {
 
 router.get('/add-repair', (req, res) => {
   res.render('add-repair');
-})
+});
 
 router.get('/see-repair-table', (req, res) => {
   res.render('see-repair-table');
@@ -69,6 +69,29 @@ router.get('/see-user-table', (req, res) => {
 
 router.get('/reports', (req, res) => {
   res.render('reports');
+});
+
+router.post('/reports', async (req, res) => {
+  const {date1, date2} = req.body;
+  if (date1 < date2) {
+      const services = await pool.query('SELECT * FROM ingresoservicios WHERE fecha >= ? AND fecha <= ?',[date1, date2]);
+      const sales = await pool.query('SELECT * FROM ingresoventas WHERE fecha >= ? AND fecha <= ?',[date1, date2]);
+      const expenses = await pool.query('SELECT * FROM egresosdevoluciones WHERE fecha >= ? AND fecha <= ?', [date1, date2]);
+      var totalRevenue = 0;
+      var totalExpenses = 0;
+      for(var i=0;i<services.length;i++){
+        totalRevenue = totalRevenue + services[i].precio_total;
+      }
+      for(var i=0;i<sales.length;i++){
+        totalRevenue = totalRevenue + sales[i].precio_total;
+      }
+      for(var i=0;i<expenses.length;i++){
+        totalExpenses = totalExpenses + expenses[i].perdida;
+      }
+      res.render('reports',{services,sales,expenses,totalRevenue,totalExpenses,date1,date2});
+  }else{
+    console.log('incorrecto');
+  }
 });
 
 module.exports = router;
