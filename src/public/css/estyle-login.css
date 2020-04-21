@@ -1,0 +1,46 @@
+body{
+    background-color: orange;
+}
+.main-section{
+    margin:0 auto;
+    margin-top: 25%;
+    padding: 0;
+}
+.modal-content{
+    background-color: rgb(12, 60, 107);
+    opacity: .95;
+    padding: 0 20px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+.user-img{
+    margin-top: 5px;
+    margin-bottom: 35px;
+}
+.user-img img{
+    width: 100xp;
+    height: 100px;
+   
+}
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    padding-left: 54px;
+    border-radius: 5px;
+}
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 24px;
+}
+.form-group#user-group::before{
+    content: "\f007";
+}
+.form-group#clave-group::before{
+    content: "\f084";
+}
+.boton{
+    color: white;
+    background-color: black
+}

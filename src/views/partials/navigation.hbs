@@ -1,79 +1,75 @@
-<div class="sticky-top">
-<nav class="navbar navbar-dark py-0 navbar-expand-lg py-md-0" style="background-color: rgb(255, 174, 0);">
-      <a class="navbar-brand" href="#">Castellanos</a>
-      <div class="navbar-collapse collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item py-0"><a href="" class="nav-link">UserType</a></li>
-              <li class="nav-item py-0"><a href="" class="nav-link"><i class="fas fa-user"></i> Username</a></li>
-              <li class="nav-item py-0"><a href="/" class="nav-link">LogOut</a></li>
-          </ul>
-      </div>
-</nav>
-<nav class="navbar navbar-expand-md navbar-light bg-primary">
-     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#firstNavbar">
-        <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="firstNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/process/home">Home</a></li>
-           <li class="nav-item dropdown">
-              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Refacciones
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/add-repair" class="dropdown-item">Agregar</a>
-                <a href="/process/see-repair-table" class="dropdown-item">Ver tabla</a>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/style-adm.css" th:href="/css/style-adm.css">
+</head>
+<body >
+  <header style="height: 40px">
+    <div class="logo">CASTELLANOS</div>
+    <button type="submit" class="btn btn-dark guia"><i class="fas fa-sign-out-alt"></i></button>
+    
+     <label class="usuario"><i class="fas fa-user "></i> Mareli Rojas   </label>
+     <label class="rol">Gerente  </label> 
+</header> 
+
+            <nav class="navbar navbar-expand-sm navbar-dark menu">
+              <a class="navbar-brand"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/process/home">INICIO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">REFACCIONES</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Agregar</a>
+                    <a class="dropdown-item" href="#">Ver Tabla</a>     
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PROVEEDORES</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Agregar</a>
+                    <a class="dropdown-item" href="#">Ver Tabla</a> 
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">SERVICIO</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Presupuesto</a>
+                    <a class="dropdown-item" href="#">Ver Tabla</a>
+                   
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">REPARACIONES</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">VENTAS</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/process/add-sale">Agregar</a>
+                    <a class="dropdown-item" href="#">Agregar Servicio</a>
+                    <a class="dropdown-item" href="/process/see-sale-table">Ver Tabla</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DEVOLUCIONES</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Agregar</a>
+                    <a class="dropdown-item" href="#">Ver Tabla</a> 
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">USUARIOS</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Agregar</a>
+                    <a class="dropdown-item" href="#">Ver Tabla</a> 
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">REPORTES</a>
+                </li>
+              </ul>
               </div>
-          </li>
-          <li class="nav-item dropdown">
-              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Proveedores
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/add-provider" class="dropdown-item">Agregar</a>
-                <a href="/process/see-provider-table" class="dropdown-item">Ver tabla</a>
-              </div>
-          </li>
-          <li class="nav-item dropdown">
-              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Servicio
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/budget" class="dropdown-item">Presupuesto</a>
-                <a href="/process/see-budget-table" class="dropdown-item">Ver tabla</a>
-              </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/process/repairs">Reparaciones</a></li>
-            <li class="nav-item dropdown">
-              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Ventas
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/add-sale" class="dropdown-item">Agregar venta</a>
-                <a href="/process/pay-service" class="dropdown-item">Pagar servicio</a>
-                <a href="/process/see-sale-table" class="dropdown-item">Ver tabla</a>
-              </div>
-          </li>
-          <li class="nav-item dropdown">
-              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Devoluciones
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/add-return" class="dropdown-item">Agregar</a>
-                <a href="/process/see-return-table" class="dropdown-item">Ver tabla</a>
-              </div>
-          </li>
-          <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                Usuarios
-              </a>
-              <div class="dropdown-menu">
-                <a href="/process/add-user" class="dropdown-item">Agregar</a>
-                <a href="/process/see-user-table" class="dropdown-item">Ver tabla</a>
-              </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/process/reports">Reportes</a></li>
-        </ul>
-     </div>
-</nav>
-</div>
+            </nav>
+</body>
