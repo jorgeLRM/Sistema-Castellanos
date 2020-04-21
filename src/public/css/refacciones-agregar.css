@@ -1,0 +1,27 @@
+.form-group {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-init {
+    margin-top: 15px;
+}
+
+.placeHolder {
+    width: 65%;
+}
+
+.scrollable {
+    padding: 0 15px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.addProvModalBtn {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.text_error {
+    display: none;
+}

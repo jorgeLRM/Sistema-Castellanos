@@ -1,0 +1,36 @@
+.table-responsive {
+    max-height: 60vh;
+    overflow: auto;
+}
+
+/* Head de tabla fija */
+thead tr:nth-child(1) th {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.scrollable-mini {
+    max-height: 40vh;
+    overflow: auto;
+}
+
+.seguro {
+    text-align: center;
+}
+
+.form-init {
+    margin-top: 15px;
+}
+
+.unidad-y-clasf {
+    margin: 0;
+}
+
+.placeHolder {
+    width: 75%;
+}
+
+.text_error {
+    display: none;
+}
