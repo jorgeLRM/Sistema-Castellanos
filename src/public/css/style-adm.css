@@ -10,6 +10,10 @@ header{
     background-color: orange;
 
 }
+.menu{
+    text-decoration:none;
+color: orange;
+}
 header .logo{
     color: white;
     margin-left: 5px;
@@ -17,6 +21,7 @@ header .logo{
     line-height: 45px;
     float: left;
 }
+ 
 header .rol{
     
     margin-right: 22px;
