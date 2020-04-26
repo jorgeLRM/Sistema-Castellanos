@@ -31,8 +31,9 @@ router.get('/budget', (req, res) => {
   res.render('budget');
 });
 
-router.get('/see-budget-table', (req, res) => {
-  res.render('see-budget-table');
+router.get('/see-budget-table', async (req, res) => {
+  const servtab = await pool.query('SELECT s.folio_servicio,au.placa, s.fecha, us.nombre FROM servicio AS s INNER JOIN automovil AS au ON s.id_automovil= au.id_automovil INNER JOIN usuario AS us ON s.id_usuario=us.id_usuario');
+  res.render('see-budget-table', {servtab});
 });
 
 router.get('/repairs', (req, res) => {
@@ -63,8 +64,9 @@ router.get('/add-user', (req, res) => {
   res.render('add-user');
 });
 
-router.get('/see-user-table', (req, res) => {
-  res.render('see-user-table');
+router.get('/see-user-table', async (req, res) => {
+    const usertab = await  pool.query('SELECT * FROM usuario');
+  res.render('see-user-table', {usertab});
 });
 
 router.get('/reports', (req, res) => {
