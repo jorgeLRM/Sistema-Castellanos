@@ -62,8 +62,14 @@ router.get('/add-return', (req, res) => {
   res.render('add-return');
 });
 
-router.get('/see-return-table', (req, res) => {
-  res.render('see-return-table');
+router.get('/see-return-table', async (req, res) => {
+  const returns = await pool.query
+  (`SELECT folio_devolucion,
+    DATE_FORMAT("2017-06-15", "%d/%c/%Y") AS fecha,
+    id_usuario,
+    folio_venta 
+    FROM devolucion`);
+  res.render('see-return-table', {returns});
 });
 
 router.get('/add-user', (req, res) => {
