@@ -65,7 +65,7 @@ router.get('/add-return', (req, res) => {
 router.get('/see-return-table', async (req, res) => {
   const returns = await pool.query
   (`SELECT folio_devolucion,
-    DATE_FORMAT("2017-06-15", "%d/%c/%Y") AS fecha,
+    DATE_FORMAT(fecha, "%d/%m/%Y") AS fecha_f,
     id_usuario,
     folio_venta 
     FROM devolucion`);
