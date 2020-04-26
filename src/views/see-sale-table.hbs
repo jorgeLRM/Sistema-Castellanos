@@ -21,36 +21,39 @@
             </form>
             
             <div class=" tab">
-                  <div class="scrollable-mini">
+                  <div class="scrollable-mini" style="min-width: 670px;">
                       <div class="table-responsive" >
                           <table class="table table-hover table-bordered" >
                               <thead  class="thead-dark" >
                                   <tr>
                                     <th scope="col">Folio de venta</th>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">ID Usuario</th>
+                                    <th scope="col">Fecha       </th>
+                                    <th scope="col">Empleado</th>
                                     <th scope="col">Acción</th>
                                   </tr>
                                 </thead>
                               <tbody>
+                                {{#each repair}}
                                   <tr>
-                                      <td>algo</td>
-                                      <td>algo</td>
-                                      <td>algo</td>
-                                    <td>
-                                    <div class="text-center">
-                                      <div class="btn-group">
-                                        <button class="btn btn-primary btnEditar">Editar</button>
-                                        <button class="btn btn-danger btnBorrar">Borrar</button>
-                                      </div>
-                                    </div>
-                                  </td>
-                                 
+                                      <td>{{folio_venta}}</td>
+                                      <td>{{fecha}}</td>
+                                      <td>{{nombre}}</td>
+                                      <td>
+                                        <div class="text-center">
+                                          <div class="btn-group">
+                                            <button class="btn btn-primary btnEditar">Editar</button>
+                                            <button class="btn btn-danger btnBorrar">Borrar</button>
+                                          </div>
+                                        </div>
+                                      </td>
+                                  </tr>
+                                {{/each}}
                               </tbody>
                           </table>
                       </div>
               </div>
               </div> 
+              
               <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
               <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
               <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

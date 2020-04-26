@@ -47,8 +47,10 @@ router.get('/pay-service', (req, res) => {
   res.render('pay-service');
 });
 
-router.get('/see-sale-table', (req, res) => {
-  res.render('see-sale-table');
+router.get('/see-sale-table', async  (req, res) => {
+  //const repair = await pool.query('SELECT * FROM venta');
+  const repair = await pool.query('SELECT m.folio_venta, m.fecha, us.nombre FROM venta AS m INNER JOIN usuario AS us ON m.id_usuario=us.id_usuario ');
+  res.render('see-sale-table',{repair});
 });
 
 router.get('/add-return', (req, res) => {
