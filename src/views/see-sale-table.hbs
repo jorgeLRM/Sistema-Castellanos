@@ -3,21 +3,21 @@
 </head>
 <body>
     <form>
-              <div class="form-row cuadros" style="width: 370px">
-                <div class="col">
-                  <label for="inputEmail4">Desde</label>
-                    <input type="text" id="picker" class="form-control">
-                 
-                </div>
-                <div class="col">
-                  <label for="inputEmail4">Hasta</label>
-                  <input type="text" id="picker2" class="form-control">
-                   
-                </div>
-                <div class="col">
-                  <button type="submit" class="btn btn-success boton">Buscar</button>   
-                </div>
-              </div>
+              <div class="container py-4">
+   <div class="row justify-content-start">
+        <div class="col-3">
+          <label>Desde</label>
+           <input type="date" name="date1" id="date1" required  class="form-control" value={{date1}}>
+        </div>
+        <div class="col-3">
+          <label>Hasta</label>
+           <input type="date" name="date2" id="date2" required class="form-control" value={{date2}}>
+        </div>
+        <div class="col-3">
+        <button type="submit" class="btn btn-primary" style="margin-top: 30px;">Consultar</button>
+        </div>
+   </div>
+</div>
             </form>
             
             <div class=" tab">
