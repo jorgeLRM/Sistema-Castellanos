@@ -23,18 +23,29 @@
                             <th scope="col">Usuario</th>
                             <th scope="col">Fecha </th>
                             <th scope="col">Precio Total</th>
-                            <th scope="col">@Automovil</th>
+                            <th scope="col">Automovil</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
-                    <thead>
+
+                    <tbody>
+                        {{#each repairs}}
                         <tr>
-                            <th scope="col">Folio Servicio</th>
-                            <th scope="col">Usuario</th>
-                            <th scope="col">Fecha </th>
-                            <th scope="col">Precio Total</th>
-                            <th scope="col">@Automovil</th>
+                            <td scope="col">{{folio_servicio}}</td>
+                            <td scope="col">{{nombre}}</td>
+                            <td scope="col">{{fecha}} </td>
+                            <td scope="col">{{precio_total}}</td>
+                            <td scope="col">{{modelo}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#modalPRO">Editar</button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalSUP">Eliminar</button>
+                            </td>
                         </tr>
-                    </thead>
+                        {{/each}}
+                    </tbody>
+
                 </table>
             </div>
 
@@ -66,7 +77,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Agregar Proveedor</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Asignar Encargado</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -79,10 +90,13 @@
                         <form>
                             <div class="col4">
                                 <select id="inputState" class="form-control mr-sm-2">
-                                    <option selected>Opcion 1</option>
-                                    <option>Opcion 2</option>
-                                    <option>Opcion 3</option>
-                                    <option>Opcion 4</option>
+
+                                    {{#each users}}
+                                    <tr>
+                                        <option>{{nombre}}</option>
+                                    </tr>
+                                    {{/each}}
+
                                 </select>
                             </div>
                         </form>

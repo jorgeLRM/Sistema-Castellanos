@@ -43,21 +43,23 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <thead>
+                    <tbody>
+                        {{#each proveedor}}
                         <tr>
-                            <th scope="col">RFC</th>
-                            <th scope="col">Razón Social</th>
-                            <th scope="col">Código Postal</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">@mail</th>
-                            <th>
+                            <td scope="col">{{rfc}}</td>
+                            <td scope="col">{{razon_social}}</td>
+                            <td scope="col">{{cp}} </td>
+                            <td scope="col">{{telefono}}</td>
+                            <td scope="col">{{email}}</td>
+                            <td>
                                 <button type="button" class="btn btn-success" data-toggle="modal"
-                                    data-target="#modalPRO">Modificar</button>
+                                    data-target="#modalPRO">Editar</button>
                                 <button type="button" class="btn btn-danger" data-toggle="modal"
                                     data-target="#modalSUP">Eliminar</button>
-                            </th>
+                            </td>
                         </tr>
-                    </thead>
+                        {{/each}}
+                    </tbody>
                 </table>
             </div>
 
@@ -195,22 +197,22 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <thead>
+                                            <tbody>
+                                                {{#each codp}}
                                                 <tr>
-                                                    <th scope="col">Código Postal</th>
-                                                    <th scope="col">Pais</th>
-                                                    <th scope="col">Estado</th>
-                                                    <th scope="col">Localidad</th>
-
-                                                    <th>
+                                                    <td scope="col">{{cp}}</td>
+                                                    <td scope="col">{{pais}}</td>
+                                                    <td scope="col">{{estado}} </td>
+                                                    <td scope="col">{{localidad}}</td>
+                                                    <td>
                                                         <button type="button" class="btn btn-success"
-                                                            data-toggle="modal"
-                                                            data-target="#modalCP2">Modificar</button>
+                                                            data-toggle="modal" data-target="#modalCP2">Editar</button>
                                                         <button type="button" class="btn btn-danger" data-toggle="modal"
                                                             data-target="#modalCP3">Eliminar</button>
-                                                    </th>
+                                                    </td>
                                                 </tr>
-                                            </thead>
+                                                {{/each}}
+                                            </tbody>
                                         </table>
                                     </div>
 

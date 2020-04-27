@@ -1,11 +1,11 @@
 <style>
     div.scrollmenu {
-        height: 700px;
+        height: 500px;
         overflow: auto;
     }
 
     div.scrollmenu2 {
-        height: 300px;
+        height: 250px;
         overflow: auto;
     }
 </style>
@@ -29,21 +29,26 @@
                             width="100%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Ventas</th>
+                                    <th scope="col">Folio Venta</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">ID Usuario</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
-                            <thead>
+                            <tbody>
+                                {{#each sales}}
                                 <tr>
-                                    <th scope="col">venta</th>
-                                    <th>
+                                    <td scope="col">{{folio_venta}}</td>
+                                    <td scope="col">{{fecha}}</td>
+                                    <td scope="col">{{nombre}} </td>
+                                    <td>
                                         <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#">Modificar</button>
+                                            data-target="#modalPRO">Editar</button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#">Eliminar</button>
-                                    </th>
+                                            data-target="#modalSUP">Eliminar</button>
+                                    </td>
                                 </tr>
-                            </thead>
+                                {{/each}}
                         </table>
                     </div>
                 </div>
@@ -54,21 +59,36 @@
                             width="100%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Refacciones</th>
+                                    <th scope="col">Numero de Parte</th>
+                                    <th scope="col">ID Unidad</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Observacion</th>
+                                    <th scope="col">Precio Venta</th>
+                                    <th scope="col">Precio Compra</th>
+                                    <th scope="col">Existencias</th>
+                                    <th scope="col">ID Clasificacion</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
-                            <thead>
+                            <tbody>
+                                {{#each parts}}
                                 <tr>
-                                    <th scope="col">Vendidas</th>
-                                    <th>
+                                    <td scope="col">{{numParte}}</td>
+                                    <td scope="col">{{id_unidad}}</td>
+                                    <td scope="col">{{descripcion}} </td>
+                                    <td scope="col">{{observacion}}</td>
+                                    <td scope="col">{{precio_venta}}</td>
+                                    <td scope="col">{{precio_compra}}</td>
+                                    <td scope="col">{{existencias}}</td>
+                                    <td scope="col">{{nombre}}</td>
+                                    <td>
                                         <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#">Modificar</button>
+                                            data-target="#modalPRO">Editar</button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#">Eliminar</button>
-                                    </th>
+                                            data-target="#modalSUP">Eliminar</button>
+                                    </td>
                                 </tr>
-                            </thead>
+                                {{/each}}
                         </table>
                     </div>
 
@@ -84,27 +104,34 @@
                             width="100%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Devoluciones</th>
+                                    <th scope="col">Folio Devolucion</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">ID Usuario</th>
+                                    <th scope="col">folio_venta</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
-                            <thead>
+                            <tbody>
+                                {{#each retuns}}
                                 <tr>
-                                    <th scope="col">devolucion</th>
-                                    <th>
+                                    <td scope="col">{{folio_devolucion}}</td>
+                                    <td scope="col">{{fecha}}</td>
+                                    <td scope="col">{{nombre}} </td>
+                                    <td scope="col">{{folio_venta}}</td>
+                                    <td>
                                         <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#">Modificar</button>
+                                            data-target="#modalPRO">Editar</button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#">Eliminar</button>
-                                    </th>
+                                            data-target="#modalSUP">Eliminar</button>
+                                    </td>
                                 </tr>
-                            </thead>
+                                {{/each}}
                         </table>
                     </div>
                     <div class="row justify-content-center py-3">
                         <div class="col-12">
                             <button type="butt1on" class="btn btn-primary" data-toggle="modal"
-                                data-target="#modalREF">Quitar</button>
+                                data-target="#modalDEV">Quitar</button>
                         </div>
                     </div>
                 </div>
@@ -112,7 +139,7 @@
         </div>
         <!-- cuerpo de la tabla -->
 
-        <div class="row justify-content-center py-3">
+        <div class="row justify-content-center">
             <div class="col-3">
                 <button type="button" class="btn btn-primary" data-toggle="modal"
                     data-target="#modalSUP">Limpiar</button>
@@ -124,7 +151,6 @@
 
         </div>
     </div>
-</div>
 </div>
 
 <!-- Modal PRO-->
@@ -139,8 +165,6 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!--
-                    -->
                 <div class="card">
                     <div class="card-body">
                         <form>
@@ -152,10 +176,11 @@
                             <div class="row justify-content-center py-3">
                                 <div class="col-12">
                                     <select id="inputState" class="form-control mr-sm-2">
-                                        <option selected>Opcion 1</option>
-                                        <option>Opcion 2</option>
-                                        <option>Opcion 3</option>
-                                        <option>Opcion 4</option>
+                                        {{#each parts}}
+                                        <tr>
+                                            <option>{{numParte}}</option>
+                                        </tr>
+                                        {{/each}}
                                     </select>
                                 </div>
                             </div>

@@ -1,5 +1,18 @@
+<style>
+    div.scrollmenu {
+        height: 370px;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.scrollmenu2 {
+        height: 370px;
+        overflow: auto;
+        white-space: nowrap;
+    }
+</style>
 <div class="container">
-    
+
     <div class="card">
         <div class="card-body">
 
@@ -82,22 +95,22 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <thead>
+                                            <tbody>
+                                                {{#each codp}}
                                                 <tr>
-                                                    <th scope="col">Código Postal</th>
-                                                    <th scope="col">Pais</th>
-                                                    <th scope="col">Estado</th>
-                                                    <th scope="col">Localidad</th>
-
-                                                    <th>
+                                                    <td scope="col">{{cp}}</td>
+                                                    <td scope="col">{{pais}}</td>
+                                                    <td scope="col">{{estado}} </td>
+                                                    <td scope="col">{{localidad}}</td>
+                                                    <td>
                                                         <button type="button" class="btn btn-success"
-                                                            data-toggle="modal"
-                                                            data-target="#modalCP2">Modificar</button>
+                                                            data-toggle="modal" data-target="#modalCP2">Editar</button>
                                                         <button type="button" class="btn btn-danger" data-toggle="modal"
                                                             data-target="#modalCP3">Eliminar</button>
-                                                    </th>
+                                                    </td>
                                                 </tr>
-                                            </thead>
+                                                {{/each}}
+                                            </tbody>
                                         </table>
                                     </div>
 
