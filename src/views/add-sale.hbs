@@ -5,23 +5,14 @@
      <div class="container ">
             <form>
               <div class="form-row cuadros"  >
-                <div class="col ">
+                <div class="col-4 ">
                   <div class="form-group" id="buscar-group">
-                    <input type="text" class="form-control" id="txtbuscar"  placeholder="Palabra clave" onchange="validar(txtbuscar)"   required >
+                    <input type="text" class="form-control" id="txtbuscar"  placeholder="Palabra clave" onchange="validar(txtbuscar)" style="max-width: 320px;"  required >
+                    
                   </div>
                   <div class="invalid-feedback">Example invalid feedback text</div>
                   </div>
-                <div class="col" >
-                    <select class="custom-select" id="validationCustom04" required >
-                        <option selected disabled value="">Opciones de busqueda</option>
-                        <option>REFACCIONES</option>
-                        <option>ADITAMENTOS</option>
-                        <option>ID</option>
-                        <option>Num. Parte</option>
-                        <option>Clasificación</option>
-                      </select>
-                </div>
-                <div class="col">
+                <div class="col-3">
                   <button type="submit" class="btn btn-primary boton" >Buscar</button>   
                 </div>
               </div>
