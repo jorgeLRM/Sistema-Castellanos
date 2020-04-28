@@ -46,11 +46,14 @@ router.get('/add-sale', (req, res) => {
 router.get('/pay-service', (req, res) => {
   res.render('pay-service');
 });
-
-router.get('/see-sale-table', async  (req, res) => {
-  //const repair = await pool.query('SELECT * FROM venta');
-  const repair = await pool.query('SELECT m.folio_venta, date_format(m.fecha, "%d-%m-%y") as fecha, CONCAT(us.nombre," ",us.apellidoPat," ",us.apellidoMat) as nombre FROM venta AS m INNER JOIN usuario AS us ON m.id_usuario=us.id_usuario ');
-  res.render('see-sale-table',{repair});
+router.get('/see-sale-table', (req, res) => {
+  res.render('see-sale-table');
+});
+router.post('/see-sale-table', async  (req, res) => {
+  const {fecha1, fecha2} = req.body;
+      const ve= await pool.query('SELECT  m.folio_venta,date_format(m.fecha, "%d-%m-%y") as fecha, CONCAT(us.nombre," ",us.apellidoPat," ",us.apellidoMat) as nombre FROM venta AS m INNER JOIN usuario AS us ON m.id_usuario=us.id_usuario WHERE fecha >= ? AND fecha <= ?',[fecha1, fecha2]);
+      res.render('see-sale-table',{ve,fecha1,fecha2});
+  
 });
 
 router.get('/add-return', (req, res) => {

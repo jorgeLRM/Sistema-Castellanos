@@ -2,16 +2,16 @@
     <link rel="stylesheet" type="text/css" href="/css/style-ver-ventas.css" th:href="/css/style-ver-ventas.css">
 </head>
 <body>
-    <form>
+    <form class="" action="/process/see-sale-table" method="post">
               <div class="container py-4">
    <div class="row justify-content-start">
         <div class="col-3">
           <label>Desde</label>
-           <input type="date" name="date1" id="date1" required  class="form-control" value={{date1}}>
+           <input type="date" name="fecha1" id="fecha1" required  class="form-control" value={{fecha1}}>
         </div>
         <div class="col-3">
           <label>Hasta</label>
-           <input type="date" name="date2" id="date2" required class="form-control" value={{date2}}>
+           <input type="date" name="fecha2" id="fecha2" required class="form-control" value={{fecha2}}>
         </div>
         <div class="col-3">
         <button type="submit" class="btn btn-primary" style="margin-top: 30px;">Consultar</button>
@@ -33,7 +33,7 @@
                                   </tr>
                                 </thead>
                               <tbody>
-                                {{#each repair}}
+                                {{#each ve}}
                                   <tr>
                                       <td>{{folio_venta}}</td>
                                       <td>{{fecha}}</td>
