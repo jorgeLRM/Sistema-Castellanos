@@ -23,7 +23,9 @@ router.get('/see-repair-table', async (req, res) => {
     ON r.id_unidad=ur.id_unidad
     INNER JOIN clasificacion_refaccion AS cr
     ON r.id_clasificacion=cr.id_clasificacion`);
-  res.render('see-repair-table', {repair});
+  const classification = await pool.query("SELECT id_clasificacion, nombre FROM clasificacion_refaccion");
+  const unity = await pool.query("SELECT id_unidad, unidad FROM unidad_refaccion");
+  res.render('see-repair-table', {repair, classification, unity});
 });
 
 router.get('/add-provider', (req, res) => {
