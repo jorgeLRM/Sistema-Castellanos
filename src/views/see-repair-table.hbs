@@ -7,32 +7,33 @@
 
     <div class="container-fluid">
 
-        <!-- Filtros y botón buscar -->
-        <div class="row mt-3 ml-1">
-
-            <!-- Filtro: Palabra clave -->
-            <div class="col-md-3 pl-2">
-                <input type="text" class="form-control fas" id="existencias"
-                    placeholder="&#xF002; Palabra clave">
+        <form>
+            <!-- Filtros y botón buscar -->
+            <div class="row mt-3 ml-1">
+            
+                <!-- Filtro: Palabra clave -->
+                <div class="col-md-3 pl-2">
+                    <input type="text" class="form-control fas" id="existencias" placeholder="&#xF002; Palabra clave">
+                </div>
+            
+                <!-- Filtro: Filtro -->
+                <div class="col-md-3">
+                    <select class="form-control" id="filtro">
+                        <option disabled selected hidden>Filtro</option>
+                        <option class="optionHidden">2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            
+                <!-- Botón Buscar-->
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-outline-dark">Buscar</button>
+                </div>
+            
             </div>
-
-            <!-- Filtro: Filtro -->
-            <div class="col-md-3">
-                <select class="form-control" id="filtro">
-                    <option disabled selected hidden>Filtro</option>
-                    <option class="optionHidden">2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-
-            <!-- Botón Buscar-->
-            <div class="col-md-2">
-                <button type="button" class="btn btn-outline-dark">Buscar</button>
-            </div>
-
-        </div>
+        </form>
 
         <!-- Tabla -->
         <div class="mx-2 my-4">
