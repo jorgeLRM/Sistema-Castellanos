@@ -10,14 +10,19 @@
     }
 </style>
 <div class="container">
-    <div class="row justify-content-start py-3">
-        <div class="col-4">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+
+    <form class="" action="/process/add-return" method="post">
+        <div class="container ">
+            <div class="row justify-content-start py-3">
+                <div class="col-4">
+                    <input name="busquedarr" id="busquedarr" class="form-control" type="search" placeholder="Buscar"
+                        value={{busquedarr}}>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
         </div>
-        <div class="col-4">
-            <button class="btn btn-secondary " type="submit">Buscar</button>
-        </div>
-    </div>
+    </form>
+
 </div>
 <div class="container-fluids">
     <div class="card">
@@ -31,7 +36,7 @@
                                 <tr>
                                     <th scope="col">Folio Venta</th>
                                     <th scope="col">Fecha</th>
-                                    <th scope="col">ID Usuario</th>
+                                    <th scope="col">Usuario</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -42,10 +47,25 @@
                                     <td scope="col">{{fecha}}</td>
                                     <td scope="col">{{nombre}} </td>
                                     <td>
-                                        <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modalPRO">Editar</button>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#modalSUP">Eliminar</button>
+<!--
+                                        <form class="" action="/process/add-return" method="post">
+                                            <button type="submit" class="btn btn-primary">Deatalles</button>
+                                        </form>
+-->
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                {{#each sale2}}
+                                <tr>
+                                    <td scope="col">{{folio_venta}}</td>
+                                    <td scope="col">{{fecha}}</td>
+                                    <td scope="col">{{nombre}} </td>
+                                    <td>
+<!--
+                                        <form class="" action="/process/add-return" method="post">
+                                            <button type="submit" class="btn btn-primary">Deatalles</button>
+                                        </form>
+-->
                                     </td>
                                 </tr>
                                 {{/each}}
@@ -60,32 +80,27 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Numero de Parte</th>
-                                    <th scope="col">ID Unidad</th>
+                                    <th scope="col">Numero de Unidades</th>
                                     <th scope="col">Descripcion</th>
                                     <th scope="col">Observacion</th>
                                     <th scope="col">Precio Venta</th>
-                                    <th scope="col">Precio Compra</th>
-                                    <th scope="col">Existencias</th>
-                                    <th scope="col">ID Clasificacion</th>
+                                    <th scope="col">Clasificacion</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{#each parts}}
+
+                                {{#each parts2}}
                                 <tr>
                                     <td scope="col">{{numParte}}</td>
                                     <td scope="col">{{id_unidad}}</td>
                                     <td scope="col">{{descripcion}} </td>
                                     <td scope="col">{{observacion}}</td>
                                     <td scope="col">{{precio_venta}}</td>
-                                    <td scope="col">{{precio_compra}}</td>
-                                    <td scope="col">{{existencias}}</td>
                                     <td scope="col">{{nombre}}</td>
                                     <td>
                                         <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modalPRO">Editar</button>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#modalSUP">Eliminar</button>
+                                            data-target="#modalPRO">Agregar</button>
                                     </td>
                                 </tr>
                                 {{/each}}
@@ -112,20 +127,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 {{#each retuns}}
                                 <tr>
                                     <td scope="col">{{folio_devolucion}}</td>
                                     <td scope="col">{{fecha}}</td>
                                     <td scope="col">{{nombre}} </td>
                                     <td scope="col">{{folio_venta}}</td>
+
                                     <td>
-                                        <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#modalPRO">Editar</button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#modalSUP">Eliminar</button>
+                                            data-target="#modalPRO">Quitar</button>
                                     </td>
                                 </tr>
                                 {{/each}}
+
+                                -->
                         </table>
                     </div>
                     <div class="row justify-content-center py-3">
