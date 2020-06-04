@@ -1,3 +1,12 @@
+<!-- 
+    TODO: Redireccionar a add-repair desde botpon "Nuevo"
+    TODO: Añadir botones a cada dupla [Tabla principal]: (E)liminar y (M)odificar
+    TODO: Añadir botones a cada dupla [Tabla clasificación]: (E)liminar y (M)odificar
+    TODO: Añadir botones a cada dupla [Tabla unidad]: (E)liminar y (M)odificar
+    ASK:  Handlebars con POST: Busqueda
+      └─Corregir funcionamiento de la busqueda
+-->
+
 <head>
     <link rel="stylesheet" href="/css/style-repair-table.css">
     <script defer src="/scripts/validaciones-refacciones.js"></script>
@@ -7,32 +16,33 @@
 
     <div class="container-fluid">
 
-        <!-- Filtros y botón buscar -->
-        <div class="row mt-3 ml-1">
-
-            <!-- Filtro: Palabra clave -->
-            <div class="col-md-3 pl-2">
-                <input type="text" class="form-control fas" id="existencias"
-                    placeholder="&#xF002; Palabra clave">
+        <form>
+            <!-- Filtros y botón buscar -->
+            <div class="row mt-3 ml-1">
+            
+                <!-- Filtro: Palabra clave -->
+                <div class="col-md-3 pl-2">
+                    <input type="text" class="form-control fas" id="existencias" placeholder="&#xF002; Palabra clave">
+                </div>
+            
+                <!-- Filtro: Filtro -->
+                <div class="col-md-3">
+                    <select class="form-control" id="filtro">
+                        <option disabled selected hidden>Filtro</option>
+                        <option class="optionHidden">2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            
+                <!-- Botón Buscar-->
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-outline-dark">Buscar</button>
+                </div>
+            
             </div>
-
-            <!-- Filtro: Filtro -->
-            <div class="col-md-3">
-                <select class="form-control" id="filtro">
-                    <option disabled selected hidden>Filtro</option>
-                    <option class="optionHidden">2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-
-            <!-- Botón Buscar-->
-            <div class="col-md-2">
-                <button type="button" class="btn btn-outline-dark">Buscar</button>
-            </div>
-
-        </div>
+        </form>
 
         <!-- Tabla -->
         <div class="mx-2 my-4">
@@ -50,159 +60,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each repair}}
                         <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
+                            <td>{{numParte}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{unidad}}</td>
+                            <td>{{precio_venta}}</td>
+                            <td>{{precio_compra}}</td>
+                            <td>{{existencias}}</td>
+                            <td>{{nombre}}</td>
                         </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
-                        <tr>
-                            <td><div contenteditable>Editable 1</div></td>
-                            <td><div contenteditable>Editable 2</div></td>
-                            <td><div contenteditable>Editable 3</div></td>
-                            <td><div contenteditable>Editable 4</div></td>
-                            <td><div contenteditable>Editable 5</div></td>
-                            <td><div contenteditable>Editable 6</div></td>
-                            <td><div contenteditable>Editable 7</div></td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
@@ -257,7 +125,7 @@
         <!-- Eliminar unidad -->
         <div class="modal fade" id="eliminarUniRefaccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
-            <div class="modal modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document"> <!--Aquí habia una clase "modal" sola-->
                 <div class="modal-content">
                     <div class="modal-header bg-warning">
                         <h5 class="modal-title" id="eliminarUniRefaccionModalCenterTitle">Eliminar unidad</h5>
@@ -267,39 +135,23 @@
                     </div>
                     <div class="modal-body">
                         
-                        <div class="scrollable-mini">
-                            <div class="table-responsive">
-                                <table class="table table-hover table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Unidad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="table-primary">algo</td>
-                                            <td class="table-primary">algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Unidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each unity}}
+                                    <tr>
+                                        <td>{{id_unidad}}</td>
+                                        <td>{{unidad}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
                         </div>
 
                     </div>
@@ -336,7 +188,7 @@
         <!-- Eliminar clasificación -->
         <div class="modal fade" id="eliminarClasfRefaccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
-            <div class="modal modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document"> <!--Aquí habia una clase "modal" sola-->
                 <div class="modal-content">
                     <div class="modal-header bg-warning">
                         <h5 class="modal-title" id="eliminarClasfRefaccionModalCenterTitle">Eliminar clasificación</h5>
@@ -345,42 +197,26 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        
-                        <div class="scrollable-mini">
-                            <div class="table-responsive">
-                                <table class="table table-hover table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>algo</td>
-                                            <td>algo</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each classification}}
+                                    <tr>
+                                        <td>{{id_clasificacion}}</td>
+                                        <td>{{nombre}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
                         </div>
-
+                    
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-warning mx-auto" data-toggle="modal"

@@ -1,3 +1,14 @@
+<!-- 
+    TODO: Acomodar modales afuera de <form>
+    TODO: Poner sección de Imagén dentro del <form>
+    ASK:  Funcionamiento del modal [Proveedores->Botón]
+    TODO: Investigar inserción de imagén a la BD
+    ASK:  Función del modal Unidad
+      └─TODO: Definir filtros para Unidad
+    ASK:  Función del modal Clasificación
+      └─TODO: Definir filtros para Clasificación
+-->
+
 <head>
     <link rel="stylesheet" href="/css/style-add-repair.css">
     <script defer src="/scripts/validaciones-refacciones.js"></script>
@@ -16,7 +27,8 @@
                     <!-- Numero de parte -->
                     <div class="form-group form-init">
                         <div class="col">
-                            <input type="text" class="form-control" id="numParte" placeholder="Número de parte" required>
+                            <input type="text" class="form-control" id="numParte" placeholder="Número de parte"
+                                required>
                         </div>
                         <div class="ml-4 text-danger text_error" id="numParteText">
                             <small>Llena el campo por favor</small>
@@ -26,7 +38,7 @@
                     <!-- Descripción -->
                     <div class="form-group">
                         <div class="col-md">
-                            <input type="text" class="form-control" id="descripcion" placeholder="Descripción" required>
+                            <textarea class="form-control" id="descripcion" placeholder="Descripción"required></textarea>
                         </div>
                         <div class="ml-4 text-danger text_error" id="descripcionText">
                             <small>Llena el campo por favor</small>
@@ -46,7 +58,8 @@
                     <!-- Precio de venta -->
                     <div class="form-group">
                         <div class="col-md">
-                            <input type="text" class="form-control" id="precioVenta" placeholder="Precio de venta" required>
+                            <input type="text" class="form-control" id="precioVenta" placeholder="Precio de venta"
+                                required>
                         </div>
                         <div class="ml-4 text-danger text_error" id="precioVentaText">
                             <small>Llena el campo por favor</small>
@@ -56,7 +69,8 @@
                     <!-- Precio de compra -->
                     <div class="form-group">
                         <div class="col-md">
-                            <input type="text" class="form-control" id="precioCompra" placeholder="Precio de compra" required>
+                            <input type="text" class="form-control" id="precioCompra" placeholder="Precio de compra"
+                                required>
                         </div>
                         <div class="ml-4 text-danger text_error" id="precioCompraText">
                             <small>Llena el campo por favor</small>
@@ -382,7 +396,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <div class="form-group">
+                        <button class="btn btn-primary ml-3" type="submit">Añadir</button>
+                    </div>
                 </form>
             </div>
             <!-- /Formulario principal -->
