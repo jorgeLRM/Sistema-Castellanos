@@ -3,14 +3,11 @@
 </head>
  <body>   
      <div class="container ">
-            <form>
+             <form class="" action="/process/add-sale" method="post">
               <div class="form-row cuadros"  >
                 <div class="col-4 ">
-                  <div class="form-group" id="buscar-group">
-                    <input type="text" class="form-control" id="txtbuscar"  placeholder="Palabra clave" onchange="validar(txtbuscar)" style="max-width: 320px;"  required >
+                    <input type="text" class="form-control" name="txtbuscar" id="txtbuscar"  placeholder="Palabra clave" style="max-width: 320px;"  required value={{txtbuscar}}>
                     
-                  </div>
-                  <div class="invalid-feedback">Example invalid feedback text</div>
                   </div>
                 <div class="col-3">
                   <button type="submit" class="btn btn-primary boton" >Buscar</button>   
@@ -32,183 +29,48 @@
                               <th>Clasificación</th>
                               <th>Existencias</th>
                               <th>Precio Venta</th>
+                              <th>Acción</th>
                           </tr>
                       </thead>
                       <tbody>
+                        {{#each ves}}
                           <tr>
+                              <td >{{id_unidad}}</td>
                               <td>-</td>
-                              <td>-</td>
-                              <td>-</td>
-                              <td>-</td>
-                              <td>-</td>
-                              <td>-</td>
-                              <td>-</td>
+                              <td>{{numParte}}</td>
+                              <td>{{descripcion}}</td>
+                              <td>{{nombre}}</td>
+                              <td>{{existencias}}</td>
+                              <td>{{precio_venta}}</td>
+                              <td>
+                              <button onclick="add(this)" class="btn btn-primary btn-xs">
+                                Agregar
+                              </button>
+                            </td>
                           </tr>
+                           {{/each}}
                       </tbody>
                       </table>
                   </div>
               </div>
           </div>
-          <div class="col-auto">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" id="agre">Agregar</button>
-   
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Ingrese la cantidad</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                      <div class="col-auto">
-                      <label>Cantidad del producto: </label>
-                    </div>
-                    <div class="col-auto">
-                      <div class="input-group number-spinner" id="spin">
-                        <span class="input-group-btn">
-                          <button class="btn btn-default" data-dir="dwn"><span class="fas fa-minus"></span></button>
-                        </span>
-                        <input disabled type="text" class="form-control text-center" value="1">
-                        <span class="input-group-btn">
-                          <button class="btn btn-default" data-dir="up"><span class="fas fa-plus"></span></button>
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
           
-          <div class="col-sm-4">
+          <div class="col-sm-6">
               <div class="scrollable-mini"> 
               <div class="table-responsive">
-                  <table class="table table-hover table-bordered" id="tabla2">
-                    <thead class="table-dark">
-                      <tr>
-                          <th>Folio Venta </th>
-                          <th>Núm. Parte</th>
-                          <th>Cantidad</th>
-                          <th>Acción</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          
-                          <td >algo</td>
-                          <td>algo</td>
-                          <td>algo</td>
-                          <td>
-                            <div class="text-center">
-                              <div class="btn-group">
-                                <button class="btn btn-primary btnEditar">Editar</button>
-                                <button class="btn btn-danger btnBorrar">Borrar</button>
-                              </div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td >algo</td>
-                        <td>algo</td>
-                        <td>algo</td>
-                        <td>
-                          <div class="text-center">
-                            <div class="btn-group">
-                              <button class="btn btn-primary btnEditar">Editar</button>
-                              <button class="btn btn-danger btnBorrar">Borrar</button>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                  </tbody>
-                  </table>
+              <table id="target" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Núm. Parte</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
               </div>
               </div>
           </div>
@@ -231,24 +93,82 @@
           </div>
       </div>
       </div>
-                <script>
-                $(document).on('click', '.number-spinner button', function () {    
-                    var btn = $(this),
-                      oldValue = btn.closest('.number-spinner').find('input').val().trim(),
-                      newVal = 0;
-                    
-                    if (btn.attr('data-dir') == 'up') {
-                      newVal = parseInt(oldValue) + 1;
-                    } else {
-                      if (oldValue > 1) {
-                        newVal = parseInt(oldValue) - 1;
-                      } else {
-                        newVal = 1;
-                      }
-                    }
-                    btn.closest('.number-spinner').find('input').val(newVal);
-                  });
+       <script>
+function add(button) {
+	var row = button.parentNode.parentNode;
+  var cells = row.querySelectorAll('td:not(:last-of-type)');
+  addToCartTable(cells);
+}
+
+function remove() {
+	var row = this.parentNode.parentNode;
+  document.querySelector('#target tbody')
+  				.removeChild(row);
+}
+
+function addToCartTable(cells) {
+   var code = cells[2].innerText;
+   var name = cells[3].innerText;
+   var price = cells[6].innerText;
+   
+   var newRow = document.createElement('tr');
+   newRow.setAttribute('data-price', price);
+   
+   newRow.appendChild(createCell(code));
+   newRow.appendChild(createCell(name));
+   newRow.appendChild(createCell(price));
+   var cellInputQty = createCell();
+   cellInputQty.appendChild(createInputQty());
+   newRow.appendChild(cellInputQty);
+   var cellRemoveBtn = createCell();
+   cellRemoveBtn.appendChild(createRemoveBtn())
+   newRow.appendChild(cellRemoveBtn);
+   
+   document.querySelector('#target tbody').appendChild(newRow);
+}
+
+function createInputQty() {
+	var inputQty = document.createElement('input');
+  inputQty.type = 'number';
+  inputQty.required = 'true';
+  inputQty.className = 'form-control'
+  inputQty.min = 1; // mínimo un producto
+  inputQty.onchange = onQtyChange;
+  return inputQty;
+}
+
+function createRemoveBtn() {
+	var btnRemove = document.createElement('button');
+  btnRemove.className = 'btn btn-xs btn-danger';
+  btnRemove.onclick = remove;
+  btnRemove.innerText = 'Descartar';
+  return btnRemove;
+}
+
+function createCell(text) {
+	var td = document.createElement('td');
+  if(text) {
+  	td.innerText = text;
+  }
+  return td;
+}
+
+function onQtyChange(e) {
+  var row = this.parentNode.parentNode;
+	var cellPrice = row.querySelector('td:nth-child(3)');
+  var prevPrice = Number(row.getAttribute('data-price'));
+  var newQty = Number(this.value);
+  var total = prevPrice * newQty;
+  cellPrice.innerText = '$' + total;
+}
+            </script>
+              <script>
+                function limpiar(){
+                  $("#tabla1 tbody tr").remove(); 
+                  $("#tabla2 tbody tr").remove(); 
+                }
               </script>
+               
               <script>
                   function validar(id) {
                     var nombre = $("#txtbuscar").val();
@@ -266,10 +186,5 @@
                       });
                   });
               </script>
-              <script>
-                function limpiar(){
-                  $("#tabla1 tbody tr").remove(); 
-                  $("#tabla2 tbody tr").remove(); 
-                }
-              </script>
+              
             </body>

@@ -42,6 +42,11 @@ router.get('/repairs', (req, res) => {
 router.get('/add-sale', (req, res) => {
   res.render('add-sale');
 });
+router.post('/add-sale', async (req, res) => {
+  const {txtbuscar}=req.body;
+  const ves= await pool.query('SELECT r.numParte,ur.id_unidad,r.descripcion,cr.nombre as nombre,r.existencias,r.precio_venta FROM refaccion r INNER JOIN unidad_refaccion AS ur ON r.id_unidad=ur.id_unidad INNER JOIN clasificacion_refaccion AS cr ON r.id_clasificacion=cr.id_clasificacion WHERE ur.id_unidad LIKE ? or r.numParte LIKE ? or r.descripcion LIKE ? or cr.nombre LIKE ?  ',[txtbuscar,txtbuscar,txtbuscar,txtbuscar]);
+  res.render('add-sale',{ves,txtbuscar});
+});
 
 router.get('/pay-service', (req, res) => {
   res.render('pay-service');
