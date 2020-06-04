@@ -1,39 +1,28 @@
 <style>
     div.scrollmenu {
         height: 370px;
-        overflow: scroll;
+        overflow: auto;
         white-space: nowrap;
     }
 
     div.scrollmenu2 {
         height: 370px;
-        overflow: scroll;
+        overflow: auto;
         white-space: nowrap;
     }
 </style>
-
-<h3 class="py-3 text-center">Devoluciones</h3>
-<!---->
-
-
-<!---->
 <div class="container">
-    <div class="row justify-content-start py-3">
-        <div class="col-4">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+    <form class="" action="/process/see-return-table" method="post">
+        <div class="container py-4">
+            <div class="row justify-content-start py-3">
+                <div class="col-4">
+                    <input name="busquedar" id="busquedar" class="form-control" type="search" placeholder="Buscar"
+                        value={{busquedar}}>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
         </div>
-        <div class="col4">
-            <select id="inputState" class="form-control mr-sm-2">
-                <option selected>Opcion 1</option>
-                <option>Opcion 2</option>
-                <option>Opcion 3</option>
-                <option>Opcion 4</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <button class="btn btn-secondary " type="submit">Buscar</button>
-        </div>
-    </div>
+    </form>
     <div class="card">
         <div class="card-body">
             <div data-spy="scroll" data-target="#listDevoluciones" data-offset="0" class="scrollmenu">
@@ -41,20 +30,43 @@
                     width="100%">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">1</th>
-                            <th scope="col">2 </th>
-                            <th scope="col">3 </th>
-                            <th scope="col">4</th>
+                            <th scope="col">Folio Devolucion</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">ID Usuario</th>
+                            <th scope="col">folio_venta</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
-                    <thead>
+                    <tbody>
+                        {{#each retuns}}
                         <tr>
-                            <th scope="col">1</th>
-                            <th scope="col">2 </th>
-                            <th scope="col">3 </th>
-                            <th scope="col">4</th>
+                            <td scope="col">{{folio_devolucion}}</td>
+                            <td scope="col">{{fecha}}</td>
+                            <td scope="col">{{nombre}} </td>
+                            <td scope="col">{{folio_venta}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#modalPRO">Detalles</button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalSUP">Eliminar</button>
+                            </td>
                         </tr>
-                    </thead>
+                        {{/each}}
+                        
+                        {{#each ret}}
+                        <tr>
+                            <td scope="col">{{folio_devolucion}}</td>
+                            <td scope="col">{{fecha}}</td>
+                            <td scope="col">{{nombre}} </td>
+                            <td scope="col">{{folio_venta}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#modalPRO">Editar</button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#modalSUP">Eliminar</button>
+                            </td>
+                        </tr>
+                        {{/each}}
                 </table>
             </div>
 
@@ -94,13 +106,16 @@
                     -->
                 <div class="card">
                     <div class="card-body">
-                        <form>
-                            <div class="row justify-content-center py-3">
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Folio">
+                        <form class="" action="/process/see-return-modalPRO" method="post">
+                            <div class="container py-4">
+                                <div class="row justify-content-start py-3">
+                                    <div class="col-9">
+                                        <input name="busqueda" id="busqueda" class="form-control" type="search"
+                                            placeholder="Buscar" value={{busqueda}}>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Buscar</button>
                                 </div>
                             </div>
-
                         </form>
                         <form>
                             <div class="row justify-content-center py-3">
@@ -111,23 +126,32 @@
                                             cellspacing="0" width="100%">
                                             <thead class="thead-dark">
                                                 <tr>
-                                                    <th scope="col">1</th>
-                                                    <th scope="col">2</th>
-                                                    <th scope="col">3</th>
-                                                    <th scope="col">4</th>
+                                                    <th scope="col">Folio Devolucion</th>
+                                                    <th scope="col">Numero de Parte</th>
+                                                    <th scope="col">Cantidad</th>
+                                                    <th scope="col">Motivo</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col"></th>
                                                 </tr>
                                             </thead>
-                                            <thead>
+                                            <tbody>
+                                                {{#each retuns2}}
                                                 <tr>
-                                                    <th scope="col">1</th>
-                                                    <th scope="col">2</th>
-                                                    <th scope="col">3</th>
-                                                    <th scope="col">4</th>
+                                                    <td scope="col">{{folio_devolucion}}</td>
+                                                    <td scope="col">{{numParte}}</td>
+                                                    <td scope="col">{{cantidad}} </td>
+                                                    <td scope="col">{{motivo}}</td>
+                                                    <td scope="col">{{tipo}}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success"
+                                                            data-toggle="modal" data-target="#modalPRO">Editar</button>
+                                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                            data-target="#modalSUP">Eliminar</button>
+                                                    </td>
                                                 </tr>
-                                            </thead>
+                                                {{/each}}
                                         </table>
                                     </div>
-
                                 </div>
                             </div>
                         </form>
