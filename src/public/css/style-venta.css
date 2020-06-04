@@ -72,15 +72,6 @@ header .usuario{
 .btn-secondary#agre{
     margin-left: 5px;
 }
-.form-group::before{
-    font-family: "Font Awesome\ 5 Free";
-    position: absolute;
-    left: 28px;
-    font-size: 24px;
-}
-.form-group#buscar-group::before{
-    content: "\f002";
-}
 .botones{
     margin-top: 30px;
     margin-right: 60px;

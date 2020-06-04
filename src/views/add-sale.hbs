@@ -1,0 +1,190 @@
+ <head>
+    <link rel="stylesheet" type="text/css" href="/css/style-venta.css" th:href="/css/style-venta.css">
+</head>
+ <body>   
+     <div class="container ">
+             <form class="" action="/process/add-sale" method="post">
+              <div class="form-row cuadros"  >
+                <div class="col-4 ">
+                    <input type="text" class="form-control" name="txtbuscar" id="txtbuscar"  placeholder="Palabra clave" style="max-width: 320px;"  required value={{txtbuscar}}>
+                    
+                  </div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary boton" >Buscar</button>   
+                </div>
+              </div>
+          
+        </form>
+        <div class="row tablas" style="text-align: center;margin-top: 20px;">
+          <div class=" col-sm-6">
+              <div class="scrollable-mini">
+                  <div class="table-responsive">
+                      <table class="table table-hover table-bordered" id="tabla1">
+                        <thead class="thead-dark">
+                          <tr>
+                              <th>ID</th>
+                              <th>Imagen</th>
+                              <th>Núm. Parte</th>
+                              <th>Descripción</th>
+                              <th>Clasificación</th>
+                              <th>Existencias</th>
+                              <th>Precio Venta</th>
+                              <th>Acción</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {{#each ves}}
+                          <tr>
+                              <td >{{id_unidad}}</td>
+                              <td>-</td>
+                              <td>{{numParte}}</td>
+                              <td>{{descripcion}}</td>
+                              <td>{{nombre}}</td>
+                              <td>{{existencias}}</td>
+                              <td>{{precio_venta}}</td>
+                              <td>
+                              <button onclick="add(this)" class="btn btn-primary btn-xs">
+                                Agregar
+                              </button>
+                            </td>
+                          </tr>
+                           {{/each}}
+                      </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-6">
+              <div class="scrollable-mini"> 
+              <div class="table-responsive">
+              <table id="target" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Núm. Parte</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              </div>
+              </div>
+          </div>
+</div>
+      
+      <div class="row botones">
+        <div class="col-auto">
+          <button type="button" class="btn btn-secondary" id="btnl" onclick="limpiar()">Limpiar</button>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-secondary" id="btnc">Cobrar</button>
+        </div>
+          <div class="col-auto">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Total $</span>
+                  </div>
+                  <input disabled type="text" class="form-control " id="btnin" aria-label="Amount (to the nearest dollar)">
+                </div>
+          </div>
+      </div>
+      </div>
+       <script>
+function add(button) {
+	var row = button.parentNode.parentNode;
+  var cells = row.querySelectorAll('td:not(:last-of-type)');
+  addToCartTable(cells);
+}
+
+function remove() {
+	var row = this.parentNode.parentNode;
+  document.querySelector('#target tbody')
+  				.removeChild(row);
+}
+
+function addToCartTable(cells) {
+   var code = cells[2].innerText;
+   var name = cells[3].innerText;
+   var price = cells[6].innerText;
+   
+   var newRow = document.createElement('tr');
+   newRow.setAttribute('data-price', price);
+   
+   newRow.appendChild(createCell(code));
+   newRow.appendChild(createCell(name));
+   newRow.appendChild(createCell(price));
+   var cellInputQty = createCell();
+   cellInputQty.appendChild(createInputQty());
+   newRow.appendChild(cellInputQty);
+   var cellRemoveBtn = createCell();
+   cellRemoveBtn.appendChild(createRemoveBtn())
+   newRow.appendChild(cellRemoveBtn);
+   
+   document.querySelector('#target tbody').appendChild(newRow);
+}
+
+function createInputQty() {
+	var inputQty = document.createElement('input');
+  inputQty.type = 'number';
+  inputQty.required = 'true';
+  inputQty.className = 'form-control'
+  inputQty.min = 1; // mínimo un producto
+  inputQty.onchange = onQtyChange;
+  return inputQty;
+}
+
+function createRemoveBtn() {
+	var btnRemove = document.createElement('button');
+  btnRemove.className = 'btn btn-xs btn-danger';
+  btnRemove.onclick = remove;
+  btnRemove.innerText = 'Descartar';
+  return btnRemove;
+}
+
+function createCell(text) {
+	var td = document.createElement('td');
+  if(text) {
+  	td.innerText = text;
+  }
+  return td;
+}
+
+function onQtyChange(e) {
+  var row = this.parentNode.parentNode;
+	var cellPrice = row.querySelector('td:nth-child(3)');
+  var prevPrice = Number(row.getAttribute('data-price'));
+  var newQty = Number(this.value);
+  var total = prevPrice * newQty;
+  cellPrice.innerText = '$' + total;
+}
+            </script>
+              <script>
+                function limpiar(){
+                  $("#tabla1 tbody tr").remove(); 
+                  $("#tabla2 tbody tr").remove(); 
+                }
+              </script>
+               
+              <script>
+                  function validar(id) {
+                    var nombre = $("#txtbuscar").val();
+                    if ($.trim(nombre) == "")
+                     alert("debe ingresar un valor en el campo");
+                    else
+                     alert("ingreso "+$.trim(nombre)+", es correcto!");
+                   }
+              </script>
+              <script>
+                                  $(function() {
+                      $('#txtbuscar').on('keypress', function(e) {
+                          if (e.which == 32)
+                              return false;
+                      });
+                  });
+              </script>
+              
+            </body>

@@ -70,13 +70,23 @@ router.get('/repairs', async (req, res) => {
 router.get('/add-sale', (req, res) => {
   res.render('add-sale');
 });
+router.post('/add-sale', async (req, res) => {
+  const {txtbuscar}=req.body;
+  const ves= await pool.query('SELECT r.numParte,ur.id_unidad,r.descripcion,cr.nombre as nombre,r.existencias,r.precio_venta FROM refaccion r INNER JOIN unidad_refaccion AS ur ON r.id_unidad=ur.id_unidad INNER JOIN clasificacion_refaccion AS cr ON r.id_clasificacion=cr.id_clasificacion WHERE ur.id_unidad LIKE ? or r.numParte LIKE ? or r.descripcion LIKE ? or cr.nombre LIKE ?  ',[txtbuscar,txtbuscar,txtbuscar,txtbuscar]);
+  res.render('add-sale',{ves,txtbuscar});
+});
 
 router.get('/pay-service', (req, res) => {
   res.render('pay-service');
 });
-
 router.get('/see-sale-table', (req, res) => {
   res.render('see-sale-table');
+});
+router.post('/see-sale-table', async  (req, res) => {
+  const {fecha1, fecha2} = req.body;
+      const ve= await pool.query('SELECT  m.folio_venta,date_format(m.fecha, "%d-%m-%y") as fecha, CONCAT(us.nombre," ",us.apellidoPat," ",us.apellidoMat) as nombre FROM venta AS m INNER JOIN usuario AS us ON m.id_usuario=us.id_usuario WHERE fecha >= ? AND fecha <= ?',[fecha1, fecha2]);
+      res.render('see-sale-table',{ve,fecha1,fecha2});
+  
 });
 
 router.get('/add-return', async (req, res) => {
