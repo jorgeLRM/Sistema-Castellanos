@@ -23,16 +23,31 @@ router.get('/add-provider', (req, res) => {
   res.render('add-provider');
 });
 
-router.get('/see-provider-table', (req, res) => {
-  res.render('see-provider-table');
+router.get('/see-provider-table', async (req, res) => {
+const proveedor = await pool.query("SELECT * FROM proveedor");
+const codp = await pool.query("SELECT * FROM codigo_postal");
+res.render('see-provider-table', { proveedor, codp });
 });
 
-router.get('/budget', (req, res) => {
-  res.render('budget');
+router.post('/see-provider-table', async (req, res) => {
+const { busqueda } = req.body;
+const pro = await pool.query("SELECT * FROM proveedor AS p WHERE p.rfc LIKE ? or p.razon_social LIKE ? or p.cp LIKE ? or p.telefono LIKE ? or p.email LIKE ? ", [busqueda,busqueda,busqueda,busqueda,busqueda]);
+res.render('see-provider-table', { pro, busqueda });
+});
+
+router.get('/budget', async (req, res) => {
+const servpres1= await pool.query("SELECT numparte, descripcion,precio_venta, existencias From refaccion");
+res.render('budget',{servpres1});
+});
+
+router.post('/budget', async (req, res) => {
+const {busquedabudget} = req.body;
+const servpres2= await pool.query("SELECT * FROM refaccion AS r WHERE r.numparte LIKE ? or r.descripcion LIKE ? or r.precio_venta LIKE ? or r.existencias LIKE ? ",[busquedabudget,busquedabudget,busquedabudget,busquedabudget]);
+res.render('budget',{servpres2,busquedabudget});
 });
 
 router.get('/see-budget-table', async (req, res) => {
-  const servtab = await pool.query('SELECT s.folio_servicio,au.placa, s.fecha, us.nombre FROM servicio AS s INNER JOIN automovil AS au ON s.id_automovil= au.id_automovil INNER JOIN usuario AS us ON s.id_usuario=us.id_usuario');
+  const servtab = await pool.query('SELECT s.folio_servicio,s.estado,au.placa, s.fecha, us.nombre FROM servicio AS s INNER JOIN automovil AS au ON s.id_automovil= au.id_automovil INNER JOIN usuario AS us ON s.id_usuario=us.id_usuario where s.estado="revision"');
   res.render('see-budget-table', {servtab});
 });
 
@@ -44,7 +59,7 @@ router.get('/add-sale', (req, res) => {
   res.render('add-sale');
 });
 
-router.get('/pay-service', (req, res) => {
+router.get('/pay-service',(req, res) => {
   res.render('pay-service');
 });
 
