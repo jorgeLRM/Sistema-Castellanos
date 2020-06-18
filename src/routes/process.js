@@ -15,8 +15,10 @@ router.get('/add-repair', (req, res) => {
   res.render('add-repair');
 });
 
-router.get('/see-repair-table', (req, res) => {
-  res.render('see-repair-table');
+router.get('/see-repair-table', async (req, res) => {
+  //const repair = await pool.query('SELECT * FROM refaccion');
+  const repair = await pool.query('SELECT r.numParte, r.descripcion, ur.unidad, r.precio_venta, r.precio_compra, r.existencias, cr.nombre FROM refaccion AS r INNER JOIN unidad_refaccion as ur ON r.id_unidad=ur.id_unidad INNER JOIN clasificacion_refaccion AS cr ON r.id_clasificacion=cr.id_clasificacion');
+  res.render('see-repair-table', {repair});
 });
 
 router.get('/add-provider', (req, res) => {

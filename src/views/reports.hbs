@@ -24,8 +24,17 @@
 }
 </style>
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
 <form class="" action="/process/reports" method="post">
 <div class="container py-4">
+  <div class="row">
+    <div class="col-md-3" style="padding-left: 260px;">
+      <p><strong>Periodo</strong></p>
+    </div>
+  </div>
    <div class="row justify-content-start">
         <div class="col-3">
            <input type="date" name="date1" id="date1" required  class="form-control" value={{date1}}>
@@ -33,7 +42,9 @@
         <div class="col-3">
            <input type="date" name="date2" id="date2" required class="form-control" value={{date2}}>
         </div>
-        <button type="submit" class="btn btn-primary">Consultar</button>
+        <div class="col-3">
+          <button type="submit" class="btn btn-primary">Consultar</button>
+        </div>
    </div>
 </div>
 </form>
@@ -88,7 +99,7 @@
 
 <div class="container py-3">
 <div class="row">
-   <caption><h5>Egresos</h5></caption>
+   <caption><h5>Egresos - Devoluciones</h5></caption>
     <div class="col-12 bg-white rounded shadow">
         <div class="table-responsive">
             <table class="table table-fixed dark">
@@ -127,7 +138,8 @@
 <div class="container" style="padding-bottom: 20px;">
    <div class="row">
       <div class="col-2 ml-auto">
-         <button type="button" class="btn btn-primary">Ver pdf</button>
+        <input type="button" class="btn btn-primary" id="create_pdf" value="Generar PDF">
+         <!-- <button type="button" class="btn btn-primary">Ver pdf</button> -->
       </div>
    </div>
 </div>
