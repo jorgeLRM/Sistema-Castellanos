@@ -16,13 +16,13 @@
 
     <div class="container-fluid">
 
-        <form>
+        <form class="" action="/process/see-repair-table" method="post">
             <!-- Filtros y botón buscar -->
             <div class="row mt-3 ml-1">
             
                 <!-- Filtro: Palabra clave -->
                 <div class="col-md-3 pl-2">
-                    <input type="text" class="form-control fas" id="existencias" placeholder="&#xF002; Palabra clave">
+                    <input name="busqueda" id="busqueda" class="form-control fas" type="text" placeholder="&#xF002; Palabra clave" value={{busqueda}}>
                 </div>
             
                 <!-- Filtro: Filtro -->
@@ -61,6 +61,17 @@
                     </thead>
                     <tbody>
                         {{#each repair}}
+                        <tr>
+                            <td>{{numParte}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{unidad}}</td>
+                            <td>{{precio_venta}}</td>
+                            <td>{{precio_compra}}</td>
+                            <td>{{existencias}}</td>
+                            <td>{{nombre}}</td>
+                        </tr>
+                        {{/each}}
+                        {{#each busq}}
                         <tr>
                             <td>{{numParte}}</td>
                             <td>{{descripcion}}</td>
