@@ -92,10 +92,9 @@
                         <div class="col-md-10">
                             <select class="form-control" id="unidad">
                                 <option disabled selected hidden>Unidad</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                {{#each unity}}
+                                    <option>{{unidad}}</option>
+                                {{/each}}
                             </select>
                         </div>
 
@@ -147,10 +146,9 @@
                         <div class="col-md-10">
                             <select class="form-control" id="clasificacion">
                                 <option disabled selected hidden>Clasificación</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                {{#each classification}}
+                                    <option>{{nombre}}</option>
+                                {{/each}}
                             </select>
                         </div>
 

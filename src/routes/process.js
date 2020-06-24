@@ -11,8 +11,10 @@ router.get('/home', (req, res) => {
   res.render('home');
 });
 
-router.get('/add-repair', (req, res) => {
-  res.render('add-repair');
+router.get('/add-repair', async (req, res) => {
+  const unity = await pool.query("SELECT unidad FROM unidad_refaccion");
+  const classification = await pool.query("SELECT nombre FROM clasificacion_refaccion");
+  res.render('add-repair', {unity, classification});
 });
 
 router.get('/see-repair-table', async (req, res) => {
