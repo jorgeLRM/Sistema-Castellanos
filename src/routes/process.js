@@ -32,6 +32,7 @@ router.get('/see-repair-table', async (req, res) => {
 
 router.post('/see-repair-table', async (req, res) => {
   const {busqueda} = req.body;
+  const wildcard = '%' + busqueda + '%';
   const busq = await pool.query
   (`SELECT r.numParte, r.descripcion, ur.unidad, r.precio_venta, r.precio_compra, r.existencias, cr.nombre
     FROM refaccion AS r
@@ -39,7 +40,7 @@ router.post('/see-repair-table', async (req, res) => {
     ON r.id_unidad=ur.id_unidad
     INNER JOIN clasificacion_refaccion AS cr
     ON r.id_clasificacion=cr.id_clasificacion
-    WHERE r.numParte LIKE ?`, [busqueda]);
+    WHERE r.numParte LIKE ? OR r.descripcion LIKE ? OR ur.unidad LIKE ? OR cr.nombre LIKE ?`, [wildcard, wildcard, wildcard, wildcard]);
   res.render('see-repair-table', {busq, busqueda});
 });
 
